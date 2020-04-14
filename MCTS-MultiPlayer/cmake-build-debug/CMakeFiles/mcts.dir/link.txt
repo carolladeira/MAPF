@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/mcts.dir/agent.cpp.o CMakeFiles/mcts.dir/main.cpp.o CMakeFiles/mcts.dir/mcts.cpp.o CMakeFiles/mcts.dir/sim.cpp.o CMakeFiles/mcts.dir/tree.cpp.o  -o mcts 

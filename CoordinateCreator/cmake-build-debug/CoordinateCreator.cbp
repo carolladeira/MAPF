@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CoordinateCreator"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CoordinateCreator">
+				<Option output="/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/CoordinateCreator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/carol/Desktop/MCTS/CoordinateCreator/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 CoordinateCreator"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CoordinateCreator/fast">
+				<Option output="/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/CoordinateCreator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/carol/Desktop/MCTS/CoordinateCreator/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 CoordinateCreator/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/CoordinateCreator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/carol/Desktop/MCTS/CoordinateCreator/agent.cpp">
+			<Option target="CoordinateCreator"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/MCTS/CoordinateCreator/agent.hpp">
+			<Option target="CoordinateCreator"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/MCTS/CoordinateCreator/main.cpp">
+			<Option target="CoordinateCreator"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/MCTS/CoordinateCreator/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

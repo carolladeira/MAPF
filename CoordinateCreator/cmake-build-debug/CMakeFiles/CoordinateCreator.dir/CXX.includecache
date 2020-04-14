@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/carol/Desktop/MCTS/CoordinateCreator/agent.hpp
+cstdlib
+-
+iostream
+-
+vector
+-
+assert.h
+-
+fstream
+-
+
+/home/carol/Desktop/MCTS/CoordinateCreator/main.cpp
+iostream
+-
+agent.hpp
+/home/carol/Desktop/MCTS/CoordinateCreator/agent.hpp
+

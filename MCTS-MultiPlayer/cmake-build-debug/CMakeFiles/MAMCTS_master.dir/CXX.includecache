@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/carol/Desktop/MCTS/MCTS-MultiPlayer/agent.cpp
+agent.hpp
+/home/carol/Desktop/MCTS/MCTS-MultiPlayer/agent.hpp
+
+/home/carol/Desktop/MCTS/MCTS-MultiPlayer/agent.hpp
+cstdlib
+-
+iostream
+-
+vector
+-
+assert.h
+-
+fstream
+-
+

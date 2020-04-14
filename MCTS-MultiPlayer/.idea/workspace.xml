@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="MCTS-MultiPlayer" targetName="mcts" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8f2cc34-40bc-4963-aec3-1280fd998eb4" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectId" id="1Yu3TztNVrP5KNnA2gaWUJOv5nc" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.mcts">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MCTS-MultiPlayer" TARGET_NAME="MAMCTS_master" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MCTS-MultiPlayer" RUN_TARGET_NAME="MAMCTS_master">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MAMCTS_master" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MCTS-MultiPlayer" RUN_TARGET_NAME="MAMCTS_master" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mcts" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MCTS-MultiPlayer" TARGET_NAME="mcts" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MCTS-MultiPlayer" RUN_TARGET_NAME="mcts">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.Build All" />
+      <item itemvalue="CMake Application.MAMCTS_master" />
+      <item itemvalue="CMake Application.mcts" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8f2cc34-40bc-4963-aec3-1280fd998eb4" name="Default Changelist" comment="" />
+      <created>1583776245832</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583776245832</updated>
+      <workItem from="1583776250392" duration="1581000" />
+      <workItem from="1583778693107" duration="229000" />
+      <workItem from="1583778931969" duration="8013000" />
+      <workItem from="1583858218121" duration="6424000" />
+      <workItem from="1583864670624" duration="152000" />
+      <workItem from="1583868558567" duration="6347000" />
+      <workItem from="1584273322761" duration="23544000" />
+      <workItem from="1584363174510" duration="1128000" />
+      <workItem from="1584368815464" duration="5389000" />
+      <workItem from="1584377263296" duration="4978000" />
+      <workItem from="1584439447555" duration="13439000" />
+      <workItem from="1584879764620" duration="11103000" />
+      <workItem from="1584969909258" duration="3821000" />
+      <workItem from="1584981358859" duration="4935000" />
+      <workItem from="1585076367359" duration="728000" />
+      <workItem from="1585140388483" duration="4956000" />
+      <workItem from="1585227008351" duration="1562000" />
+      <workItem from="1585246958346" duration="1322000" />
+      <workItem from="1585316142317" duration="3530000" />
+      <workItem from="1585320048249" duration="12658000" />
+      <workItem from="1585490224317" duration="2890000" />
+      <workItem from="1585497226487" duration="1414000" />
+      <workItem from="1585657451264" duration="11629000" />
+      <workItem from="1585753267694" duration="20000" />
+      <workItem from="1585753803692" duration="1414000" />
+      <workItem from="1585912969910" duration="25000" />
+      <workItem from="1585921776746" duration="3563000" />
+      <workItem from="1586037202601" duration="40000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/mcts.cpp</url>
+          <line>89</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/mcts.cpp</url>
+          <line>117</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>117</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>106</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>89</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>76</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/mcts.cpp</url>
+          <line>502</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="g.n_agents" />
+        <watch expression="stat_runs" />
+        <watch expression="CLOCKS_PER_SEC " />
+        <watch expression=" tp-&gt;ag_tree.at(0)" />
+        <watch expression="tp-&gt;ag_tree.at(0).tree_vec.at(lev)" />
+        <watch expression="agente" />
+        <watch expression="at_goal" />
+        <watch expression="at_goal[2]" />
+        <watch expression="ath_agents.size()" />
+        <watch expression="path_agents.size()" />
+        <watch expression="path_agents[0]" language="ObjectiveC" />
+        <watch expression="agent" />
+        <watch expression="this-&gt;agente" />
+        <watch expression="reward_vec" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
