@@ -14,9 +14,11 @@ agent::agent() {
 }
 //Global Functions
 void multi_agent::create_config_list(int max_a, int xd, int yd, int nstat){ //nstat = number of stat runs, max_a = max number of agents
-    ifstream ac_x("/home/carol/Desktop/MCTS/Instances/agent_x_coords.txt"); ifstream ac_y("/home/carol/Desktop/MCTS/Instances/agent_y_coords.txt"); //These files contain point starting positions
-    ifstream gc_x("/home/carol/Desktop/MCTS/Instances/goal_x_coords.txt"); ifstream gc_y("/home/carol/Desktop/MCTS/Instances/goal_y_coords.txt"); //These files contain goal positions
+    ifstream ac_x("/home/carol/Desktop/Path Planning/Instances/agent_x_coords.txt"); ifstream ac_y("/home/carol/Desktop/Path Planning/Instances/agent_y_coords.txt"); //These files contain point starting positions
+    ifstream gc_x("/home/carol/Desktop/Path Planning/Instances/goal_x_coords.txt"); ifstream gc_y("/home/carol/Desktop/Path Planning/Instances/goal_y_coords.txt"); //These files contain goal positions
     point a;
+    this->xdim = xd;
+    this->ydim = yd;
 
     //Create a master-list of point and goal initial positions in gridworld. A different set for each statistical run
     for(int j = 0; j < nstat*max_a; j++){ //nstat*max_a = maximum number of configurations
@@ -108,4 +110,35 @@ void multi_agent::check_goal_coordinates(int n, double xc, double yc){ //Goal nu
             break;
         }
     }
+}
+
+void multi_agent::printMap() {
+    char *mapChar = new char[xdim * ydim];
+    int n=0;
+    for(int x=0; x < xdim; x++){
+        for(int y =0; y < ydim; y++){
+            mapChar[n] = '.';
+            for(int i =0; i < agent_start_pos.size(); i++){
+                if(agent_start_pos[i].agent_y == y && agent_start_pos[i].agent_x == x){
+                    mapChar[n] = 'S';
+                }
+                if(goal_start_pos[i].agent_y == y && goal_start_pos[i].agent_x == x){
+                    mapChar[n] = 'G';
+                }
+            }
+            n++;
+        }
+    }
+    std::cout << "MAP:";
+    int t = 0;
+    for (int i = 0; i < xdim; i++) {
+        std::cout << std::endl;
+        for (int j = 0; j < ydim; j++) {
+            std::cout << mapChar[t];
+            t++;
+        }
+    }
+    std::cout << std::endl;
+    delete[] mapChar;
+
 }

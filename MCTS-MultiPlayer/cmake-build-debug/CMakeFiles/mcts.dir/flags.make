@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/carol/Desktop/MCTS/MCTS-MultiPlayer/. 
+CXX_INCLUDES = -I"/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/." 
 

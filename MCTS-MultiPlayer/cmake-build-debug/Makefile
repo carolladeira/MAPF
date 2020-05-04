@@ -48,10 +48,10 @@ RM = /home/carol/Downloads/CLion-2019.2/clion-2019.2/bin/cmake/linux/bin/cmake -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carol/Desktop/MCTS/MCTS-MultiPlayer
+CMAKE_SOURCE_DIR = "/home/carol/Desktop/Path Planning/MCTS-MultiPlayer"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/CMakeFiles /home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug/CMakeFiles" "/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

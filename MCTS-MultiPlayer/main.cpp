@@ -34,11 +34,11 @@ int main() {
     multi_agent *map = &m; //Pointers
 
     //Testing Parameters
-    int stat_runs = 1000000; //Number of statistical runs : 30
+    int stat_runs = 30; //Number of statistical runs : 30
     int max_run = 20;//Cuts off the simulation if the number of iterations exceed this amount : 10000
-    int agent_increment = 1; //Increases the number of agents in a simulation by this amount
-    int starting_agents = 21; //Initial number of agents being tested
-    int max_agents = 21; //Maximum number of agents to be tested
+    int agent_increment = 0; //Increases the number of agents in a simulation by this amount
+    int starting_agents = 3; //Initial number of agents being tested
+    int max_agents = 3; //Maximum number of agents to be tested
     g.x_dim = 8; //Maximum X Dimension
     g.y_dim = 8; //Maximum Y Dimension
     mcp->epsilon = 10; //UCB1 exploration constant (0 = greedy action selection)
@@ -55,6 +55,7 @@ int main() {
     g.initialize_parameters(map, mcp);
     mcp->at_goal.resize(map->n_agents);
     mcts.create_root_nodes(tp, map);
+    m.printMap();
     clock_t c_start_geral = clock();
     double tempo;
     double ti_;

@@ -31,7 +31,7 @@ public:
     int id;
     int row, col;
 
-    int finish_time;
+    int arrive_goal;
     vector<int> path;
     vector<int> cost;
     bool only_dummy;
@@ -49,7 +49,6 @@ public:
     int AStar_sCol(int start_loc, Endpoint *goal, int begin_time, Token token, bool evaluate, bool coleta);
 
     void setAgent(int loc, int col, int row, int id);
-    bool TP( Token &token);
     Task* bestTask(Token token);
 
     int AStar(int start_loc, Endpoint *goal, int begin_time, Token token, bool evaluate, bool coleta);
@@ -57,8 +56,6 @@ public:
     void updatePath(Node *goal);
     void releaseClosedListNodes(map<unsigned int, Node*> &allNodes_table);
     bool Move2EP(Token &token, bool constraint);
-    int EvaluateTP(Token &token, int finish_time);
-    int fastEvaluateTP(Token &token);
     int planPath(int start_loc, Endpoint *goal, int begin_time, Token &token);
 
 

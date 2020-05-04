@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ICBS"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/carol/Desktop/Path Planning/ICBS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/carol/Desktop/Path Planning/ICBS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ICBS">
+				<Option output="/home/carol/Desktop/Path Planning/ICBS/cmake-build-debug/ICBS" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/ICBS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 ICBS"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ICBS/fast">
+				<Option output="/home/carol/Desktop/Path Planning/ICBS/cmake-build-debug/ICBS" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/ICBS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 ICBS/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/carol/Desktop/Path Planning/ICBS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/ICBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/Agent.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/Agent.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/Endpoint.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/Endpoint.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/ICBSNode.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/ICBSNode.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/ICBSSearch.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/ICBSSearch.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/LLNode.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/LLNode.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/MDD.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/MDD.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/ScenarioLoader.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/ScenarioLoader.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/Simulation.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/Simulation.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/SingleAgentICBS.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/SingleAgentICBS.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/SingleSearch.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/SingleSearch.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/compute_heuristic.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/compute_heuristic.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/egraph_reader.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/egraph_reader.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/main.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/map_loader.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/map_loader.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/node.cpp">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/node.h">
+			<Option target="ICBS"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/ICBS/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

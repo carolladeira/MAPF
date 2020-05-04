@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="navigation_trash"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="navigation_trash">
+				<Option output="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/navigation_trash" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/carol/Desktop/Path Planning/Navigation/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 navigation_trash"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="navigation_trash/fast">
+				<Option output="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/navigation_trash" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/carol/Desktop/Path Planning/Navigation/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 navigation_trash/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/Navigation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/CMakeLists.txt">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/DStar.cpp">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/DStar.h">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/NavMesh.cpp">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/NavMesh.h">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/Scene.cpp">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/Scene.h">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/CMakeCache.txt">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/Makefile">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/Navigation_Mesh">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/Navigation_Mesh.cbp">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/cmake_install.cmake">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/meshes.txt">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/navigation_mesh">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/navigation_mesh.cbp">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/untitled">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/cmake-build-debug/untitled.cbp">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/main.cpp">
+			<Option target="navigation_trash"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/Navigation/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

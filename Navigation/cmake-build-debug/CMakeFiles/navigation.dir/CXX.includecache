@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/carol/Desktop/Path Planning/Navigation/Nav.h
+vector
+-
+math.h
+-
+time.h
+-
+stdlib.h
+-
+vector
+-
+bits/stdc++.h
+-
+ScenarioLoader.h
+/home/carol/Desktop/Path Planning/Navigation/ScenarioLoader.h
+
+/home/carol/Desktop/Path Planning/Navigation/ScenarioLoader.h
+vector
+-
+cstring
+-
+string
+-
+
+/home/carol/Desktop/Path Planning/Navigation/Scene.cpp
+GL/glut.h
+-
+iostream
+-
+Scene.h
+/home/carol/Desktop/Path Planning/Navigation/Scene.h
+fstream
+-
+
+/home/carol/Desktop/Path Planning/Navigation/Scene.h
+Nav.h
+/home/carol/Desktop/Path Planning/Navigation/Nav.h
+ScenarioLoader.h
+/home/carol/Desktop/Path Planning/Navigation/ScenarioLoader.h
+

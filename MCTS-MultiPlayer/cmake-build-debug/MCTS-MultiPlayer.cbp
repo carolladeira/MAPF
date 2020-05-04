@@ -8,33 +8,33 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="mcts">
-				<Option output="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/mcts" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug"/>
+				<Option output="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug/mcts" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/."/>
+					<Add directory="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/."/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -45,20 +45,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 mcts"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 mcts"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="mcts/fast">
-				<Option output="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/mcts" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug"/>
+				<Option output="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug/mcts" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/."/>
+					<Add directory="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/."/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -69,51 +69,51 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 mcts/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 mcts/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug"/>
+				<Option working_dir="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/MCTS/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/carol/Desktop/Path\ Planning/MCTS-MultiPlayer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/agent.cpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.cpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/agent.hpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/main.cpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/main.cpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/mcts.cpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.cpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/mcts.hpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.hpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/sim.cpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/sim.cpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/sim.hpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/sim.hpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/tree.cpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.cpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/tree.hpp">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.hpp">
 			<Option target="mcts"/>
 		</Unit>
-		<Unit filename="/home/carol/Desktop/MCTS/MCTS-MultiPlayer/CMakeLists.txt">
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

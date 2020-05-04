@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/navigation_trash.dir/DStar.cpp.o CMakeFiles/navigation_trash.dir/main.cpp.o CMakeFiles/navigation_trash.dir/NavMesh.cpp.o CMakeFiles/navigation_trash.dir/Scene.cpp.o  -o navigation_trash /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so 

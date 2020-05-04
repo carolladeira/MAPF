@@ -16,7 +16,7 @@ void Agent::setAgent(int loc, int col, int row, int id) {
     this->col = col;
     this->row = row;
     this->id = id;
-    this->finish_time = 0;
+    this->arrive_goal = 0;
     for (int i = 0; i < maxtime; i++) {
         path.push_back(loc);//stay still all the tiem
     }
@@ -35,195 +35,8 @@ void Agent::updatePath(Node *goal) {
 
 }
 
-int Agent::EvaluateTP(Token &token, int finish_time) {
-
-    return -2;
-}
-
-int Agent::fastEvaluateTP(Token &token) {
-
-    loc = path[finish_time];
-    vector<int> dist_start;
-    vector<int> dist_goal;
-    Task *task = NULL;
-    task = bestTask(token);
-    if (task == NULL) {
-
-        bool move = false;
-        for (list<Task *>::iterator it = token.taskset.begin(); it != token.taskset.end(); it++) {
-            if ((*it)->goal->loc == loc) {
-                move = true;
-                break;
-            }
-        }
-        if (move) {
-            token.timestep = finish_time;
-            if (Move2EP(token, false)) {
-                int i = 0;
-                for (i = token.timestep; i < token.path[id].size(); i++) //agent move with package or waiting
-                {
-                    token.path[id][i] = path[i];
-                }
-                return 0;
-            } else {
-                debug = 1;
-                //  cout << endl << endl << " Agent  " << id << "  impedindo tarefa no lugar " <<loc<< " no finish time " <<this->finish_time <<endl;
-                bool t = Move2EP(token, true);
-                // cout << endl << endl << "chamo com constraint true, agent  " << id << " finish time " <<this->finish_time <<endl;
-                int i = 0;
-                if (t) {
-                    for (i = token.timestep; i < token.path[id].size(); i++) //agent move with package or waiting
-                    {
-                        token.path[id][i] = path[i];
-                    }
-                } else {
-                    cout << "ERROOOOOOOOOOO na AG: agente nao conseguiu mover pra um endpoint sem restricoes" << endl;
-                }
-                return 0;
-            }
-
-        } else {
-            //   cout << "Agent " << id << " nao pegou tarefa: -1" << endl;
-            return -1;
-        }
-
-    } else {
-        dist_start = task->start->h_val;
-        int finish_time_pickup = dist_start[loc]; //posicao inicial ate pickup
-        dist_goal = task->goal->h_val;
-        int finish_time_delivery = dist_goal[task->start->loc]; //posicao de pickup ate goal
-        int finish_time_final =
-                finish_time + finish_time_pickup + finish_time_delivery; //posicao final do agente + entrega + coleta
 
 
-        path[finish_time_final] = task->goal->loc;
-        path[path.size() - 1] = task->goal->loc;
-        token.path[id][finish_time_pickup + finish_time] = task->start->loc;
-        token.path[id][token.path[id].size() - 1] = task->goal->loc;
-        token.path[id][finish_time_final] = task->goal->loc;
-
-//            std::cout << " Agent " << id << " posicao " << loc << " take task " << task->start->loc << " --> "
-//                      << task->goal->loc;
-//            std::cout << "	Timestep " << finish_time << "-->" << finish_time + finish_time_pickup << " | "
-//                      << finish_time + finish_time_pickup << " -->" << finish_time_final << endl;
-
-
-
-        token.timestep = finish_time_final;
-        token.taskset.remove(task);
-        this->finish_time = finish_time_final;
-
-        return finish_time_final;
-    }
-    return 0;
-
-
-}
-
-bool Agent::TP(Token &token) {
-
-    loc = path[token.timestep];
-
-    Task *task = NULL;
-    task = bestTask(token);
-    if (task == NULL) {
-
-        bool move = false;
-        for (list<Task *>::iterator it = token.taskset.begin(); it != token.taskset.end(); it++) {
-            if ((*it)->goal->loc == loc) {
-                move = true;
-                break;
-            }
-        }
-        if (move) {
-            if (Move2EP(token, false)) {
-                int i = 0;
-                for (i = token.timestep; i < token.path[id].size(); i++) //agent move with package or waiting
-                {
-                    token.path[id][i] = path[i];
-                }
-                return true;
-            } else {
-                cout << endl << endl << "ERRO " << id << " nao conseguiu se mover pra nennhum endpoint" << endl;
-                debug = 1;
-                bool t = Move2EP(token, false);
-            }
-
-        } else {
-            std::cout << "Agent " << id << " wait at timestep " << token.timestep << endl;
-            this->finish_time = token.timestep + 1;
-            //  this->path[token.timestep + 1] = loc;
-            return true;
-        }
-    } else {
-        std::cout << endl << " Agent " << id << " take task " << task->start->id << " " << task->start->loc << " --> "
-                  << task->goal->id << " " << task->goal->loc;
-
-        int arrive_start = AStar(loc, task->start, token.timestep, token, false, true);
-        if (arrive_start == -1) {
-            cout << "ERRO: nao encontrou caminho para coleta" << endl;
-            system("PAUSE");
-
-        }
-        std::cout << "	Timestep " << token.timestep << "-->" << arrive_start;
-
-        int arrive_goal = AStar(task->start->loc, task->goal, arrive_start, token, false, false);
-
-        if (arrive_goal == -1) {
-            //    cout <<"encontrou caminho para entrego, arrumo chamando coleta e entrega de novo com evaluate true em coleta"<< endl;
-            arrive_start = AStar(loc, task->start, token.timestep, token, true, true);
-            arrive_goal = AStar(task->start->loc, task->goal, arrive_start, token, false, false);
-
-        }
-        std::cout << "-->" << arrive_goal;
-        for (int i = token.timestep; i <= arrive_start; i++) {
-            std::cout << "	" << path[i];
-        }
-        std::cout << " | ";
-
-        for (int i = arrive_start + 1; i <= arrive_goal; i++) {
-            std::cout << "	" << path[i];
-        }
-
-        bool hold = true;
-        for (int i = arrive_goal + 1; i < maxtime; i++) {
-            for (int j = 0; j < token.agents.size(); j++) {
-                if (j != id && task->goal->loc == token.path[j][i]) {
-//std::cout << endl << " Agent " << id << " colide no tempo " << i << " com agente " << j;
-                    hold = false;
-                    break;
-                }
-            }
-        }
-        if (!hold) {
-            int t = AStar(task->goal->loc, task->goal, arrive_goal, token, true, false);
-            // std::cout << endl << " Agent " << id << " arruma posicao no tempo  " << t;
-            if (t == -1) {
-                //cout << "Nao conseguiu arrumar a posicao, arrumo chamando entrega de novo com evalueate true" << endl;
-                arrive_goal = AStar(task->start->loc, task->goal, arrive_start, token, true, false);
-                // std::cout << endl << "-->" << arrive_goal;
-
-//                for (int i = arrive_start + 1; i <= arrive_goal; i++) {
-//                    std::cout << "	" << path[i];
-//                }
-            }
-//            for (int i = arrive_goal; i <= t; i++) {
-//                std::cout << "	" << path[i];
-//            }
-        }
-        for (int i = token.timestep; i < token.path[id].size(); i++) {
-            token.path[id][i] = path[i];
-        }
-        this->finish_time = arrive_goal;
-        task->agent = this;
-        task->ag_arrive_start = arrive_start;
-        task->ag_arrive_goal = arrive_goal;
-        token.taskset.remove(task);
-        return true;
-    }
-    return false;
-
-}
 
 int Agent::AStar(int start_loc, Endpoint *goal, int begin_time, Token token, bool evaluate, bool coleta) {
 
@@ -488,7 +301,7 @@ bool Agent::Move2EP(Token &token, bool constraint) {
             }
             if (!occupied) {
                 updatePath(v);
-                finish_time = v->timestep;
+                arrive_goal = v->timestep;
                 //   if(this->debug) cout << "Agent " << id << " moves to endpoint " << v->loc << " no tempo " << finish_time << endl;
                 releaseClosedListNodes(allNodes_table);
                 return true;

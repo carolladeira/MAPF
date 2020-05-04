@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="navigation" targetName="navigation" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9f0c39e-7f45-4e1f-bede-803bdd4b7bc2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ICBS/Agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/Agent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ICBS/Agent.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/Agent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ICBS/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/Simulation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ICBS/Simulation.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/Simulation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ICBS/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/agent.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/mcts.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/sim.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/MAMCTS_master.dir/tree.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/agent.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/agent.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/mcts.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/mcts.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/sim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/sim.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/tree.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/tree.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/MCTS-MultiPlayer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/MCTS-MultiPlayer.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/mcts" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/mcts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/main.cpp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FavoritesManager">
+    <favorites_list name="Navigation_Mesh" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tamanho</find>
+      <find>criaObjetos</find>
+      <find>set</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectId" id="1bRr9RkrWIoRfZEiNomNXRCw9zY" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>C/C++</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.Build All">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="navigation" TARGET_NAME="navigation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="navigation" RUN_TARGET_NAME="navigation">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Clion" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" singleton="true" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="navigation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="navigation" TARGET_NAME="navigation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="navigation" RUN_TARGET_NAME="navigation">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.Build All" />
+      <item itemvalue="CMake Application.Clion" />
+      <item itemvalue="CMake Application.navigation" />
+    </list>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9f0c39e-7f45-4e1f-bede-803bdd4b7bc2" name="Default Changelist" comment="" />
+      <created>1541273242618</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541273242618</updated>
+      <workItem from="1541273251772" duration="26000" />
+      <workItem from="1542488329861" duration="170000" />
+      <workItem from="1542498211567" duration="10829000" />
+      <workItem from="1542551124455" duration="792000" />
+      <workItem from="1542630615276" duration="1199000" />
+      <workItem from="1542635155275" duration="8294000" />
+      <workItem from="1542648213826" duration="604000" />
+      <workItem from="1542649064467" duration="8170000" />
+      <workItem from="1542716302421" duration="1627000" />
+      <workItem from="1542740654940" duration="1553000" />
+      <workItem from="1542742271136" duration="13831000" />
+      <workItem from="1542812844058" duration="2952000" />
+      <workItem from="1542823936026" duration="14827000" />
+      <workItem from="1542852858773" duration="9808000" />
+      <workItem from="1542891971508" duration="5528000" />
+      <workItem from="1542910318365" duration="14519000" />
+      <workItem from="1542970966963" duration="10014000" />
+      <workItem from="1542981407507" duration="9336000" />
+      <workItem from="1543091550069" duration="24538000" />
+      <workItem from="1543171341173" duration="596000" />
+      <workItem from="1543232321802" duration="41764000" />
+      <workItem from="1543323232887" duration="11156000" />
+      <workItem from="1543406655599" duration="22041000" />
+      <workItem from="1543441402979" duration="6102000" />
+      <workItem from="1543451960867" duration="2534000" />
+      <workItem from="1543493568332" duration="3801000" />
+      <workItem from="1543538017725" duration="11951000" />
+      <workItem from="1553005528237" duration="47000" />
+      <workItem from="1588605598087" duration="7716000" />
+    </task>
+    <task id="LOCAL-00001" summary="Gerando lista de adjacentes correta">
+      <created>1542985941656</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542985941656</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ultima versao  - tem erros">
+      <created>1542998224181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542998224181</updated>
+    </task>
+    <task id="LOCAL-00003" summary="DStar Lite implementado - sem evitar obstaculos">
+      <created>1543288403377</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1543288403378</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Gerando lista de adjacentes correta" />
+    <MESSAGE value="Ultima versao  - tem erros" />
+    <MESSAGE value="DStar Lite implementado - sem evitar obstaculos" />
+    <option name="LAST_COMMIT_MESSAGE" value="DStar Lite implementado - sem evitar obstaculos" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="dstar-&gt;closed" />
+        <watch expression="i" />
+        <watch expression="dstar-&gt;closed[i].id" />
+        <watch expression="dstar-&gt;closed" />
+        <watch expression="open" />
+        <watch expression="u" />
+        <watch expression="this-&gt;open.begin()" />
+        <watch expression="this-&gt;open" />
+        <watch expression="this-&gt;open.begin()" />
+        <watch expression="u.key.first " />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>open</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dstar-&gt;closed</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>final</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cameFrom</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nObstacles</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this-&gt;obstacles[i].pontos[0].x;</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+</project>

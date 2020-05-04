@@ -27,12 +27,9 @@ using namespace std;
 class Simulation {
 public:
     int time;
-    float computation_time;
 
     int row, col;
     int maxtime;
-    int num_agents;
-    int num_endpoint;
 
     vector<bool> my_map;
     int timestep;
@@ -43,30 +40,34 @@ public:
     vector<vector<int> > Dis;
     vector<Agent> agents;
 
-    vector<Task*> list_taskset;
-
+    uint64_t no_expanded;
+    uint64_t no_generated;
     int height;
     int width;
     int num_experimentos;
 
-    Simulation();
+    const char*scenName;
+    string mapName;
+
+
+
+    Simulation(ScenarioLoader scen);
 
     void runSearch(ScenarioLoader scen);
-    void BFS();
+    void addTasks(ScenarioLoader scen, int qt);
 
-    void run_CBS_TA(bool bestInd);
+    void BFS();
 
     bool PathFinding(vector<Agent*> &ags, const vector<vector<int> > &cons_paths);
 
     vector<int> CalcCost(Agent* ag);
 
-    int getShortTime();
-
-    int mkspn();
-    double tempoGA() { return this->tempoTotalGA; }
     double tempoPathPlan()  { return this->tempoTotalPathPlan; }
 
-    void deleteTask_id(int id);
+    void printMap(ScenarioLoader scen);
+    void printPath();
+    void info();
+
 
     bool TestConstraints();
 

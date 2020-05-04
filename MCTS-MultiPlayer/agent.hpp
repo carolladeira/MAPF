@@ -57,6 +57,7 @@ public:
     //Agent Functions
     void assign_agent_coordinates();
     void check_agent_coordinates(int n);
+    void printMap();
     
     //Parameters
     int n_agents; //Number of agents and goals

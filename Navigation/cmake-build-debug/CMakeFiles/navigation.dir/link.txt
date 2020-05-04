@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/navigation.dir/main.cpp.o CMakeFiles/navigation.dir/Nav.cpp.o CMakeFiles/navigation.dir/ScenarioLoader.cpp.o CMakeFiles/navigation.dir/Scene.cpp.o  -o navigation /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so 
