@@ -39,6 +39,8 @@ void multi_agent::create_config_list(int max_a, int xd, int yd, int nstat){ //ns
 void multi_agent::create_start_vecs(int stat, int n, int max_a){ //max_a = maximum number of agents, stat = current stat run
     n_agents = n; //n is the current number of agents
     point a; agent ag;
+    int c = 97;
+    int ca = 65;
     for(int i = 0; i < n_agents; i++){
         agent_start_pos.push_back(a);
         goal_start_pos.push_back(a);
@@ -52,6 +54,9 @@ void multi_agent::create_start_vecs(int stat, int n, int max_a){ //max_a = maxim
         agents.at(i).goal.agent_x = xgoal;
 
         double dist = std::abs(xstart- xgoal) + std::abs(ystart - ygoal);
+        agents.at(i).s = c;
+        agents.at(i).g = ca;
+        c++; ca++;
         agents.at(i).dist = dist;
         agents.at(i).path_agent.push_back(agents.at(i).start );
         agent_start_pos.at(i) = agent_list.at(max_a*stat + i); //Keeps track of point intial positions
@@ -115,15 +120,17 @@ void multi_agent::check_goal_coordinates(int n, double xc, double yc){ //Goal nu
 void multi_agent::printMap() {
     char *mapChar = new char[xdim * ydim];
     int n=0;
+    int c = 97;
+    int ca = 65;
     for(int x=0; x < xdim; x++){
         for(int y =0; y < ydim; y++){
             mapChar[n] = '.';
             for(int i =0; i < agent_start_pos.size(); i++){
-                if(agent_start_pos[i].agent_y == y && agent_start_pos[i].agent_x == x){
-                    mapChar[n] = 'S';
+                if(agents[i].start.agent_y == y && agents[i].start.agent_x == x){
+                    mapChar[n] = agents[i].s;
                 }
-                if(goal_start_pos[i].agent_y == y && goal_start_pos[i].agent_x == x){
-                    mapChar[n] = 'G';
+                if(agents[i].goal.agent_y == y && agents[i].goal.agent_x == x){
+                    mapChar[n] = agents[i].g;
                 }
             }
             n++;

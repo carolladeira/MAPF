@@ -4,29 +4,29 @@
 #define maxtime 10000
 
 void Simulation::BFS() {
-    for (int i = 0; i < my_map.size(); i++) {
-        vector<int> D;
-        D.resize(my_map.size(), INF);
-        if (my_map[i]) {
-            D[i] = 0;
-            queue<int> Q;
-            Q.push(i);
-            while (!Q.empty()) {
-                int u = Q.front();
-                Q.pop();
-                int offset[4] = {-1, 1, -col, col};
-                for (int j = 0; j < 4; j++) {
-                    int v = u + offset[j];
-                    if (0 <= v && v < my_map.size() && abs(v % col - u % col) < 2 && my_map[v] && D[v] > D[u] + 1) {
-                        D[v] = D[u] + 1;
-                        Q.push(v);
-                    }
-                }
-            }
-        }
-        Dis.push_back(D);
-    }
-    return;
+//    for (int i = 0; i < my_map.size(); i++) {
+//        vector<int> D;
+//        D.resize(my_map.size(), INF);
+//        if (my_map[i]) {
+//            D[i] = 0;
+//            queue<int> Q;
+//            Q.push(i);
+//            while (!Q.empty()) {
+//                int u = Q.front();
+//                Q.pop();
+//                int offset[4] = {-1, 1, -col, col};
+//                for (int j = 0; j < 4; j++) {
+//                    int v = u + offset[j];
+//                    if (0 <= v && v < my_map.size() && abs(v % col - u % col) < 2 && my_map[v] && D[v] > D[u] + 1) {
+//                        D[v] = D[u] + 1;
+//                        Q.push(v);
+//                    }
+//                }
+//            }
+//        }
+//        Dis.push_back(D);
+//    }
+//    return;
 }
 
 bool Simulation::PathFinding(vector<Agent *> &ags, const vector<vector<int>> &cons_paths) {
@@ -63,7 +63,7 @@ bool Simulation::PathFinding(vector<Agent *> &ags, const vector<vector<int>> &co
             ags[i]->arrive_goal = t; //timestep + icbs.paths[i]->size() - 1;
         }
         duration = (std::clock() - start) / (double) CLOCKS_PER_SEC;
-        tempoTotalPathPlan = duration + tempoTotalPathPlan;
+        tempoTotalPathPlan = duration;
         return true;
     } else if (res == 0) {
         cout << res << endl;
@@ -81,8 +81,16 @@ bool Simulation::PathFinding(vector<Agent *> &ags, const vector<vector<int>> &co
 vector<int> Simulation::CalcCost(Agent *ag) {
 
     vector<int> cost;
-    int tt = Dis[ag->park_loc][ag->goal_loc];
-    cost.push_back(tt);
+   // int tt = Dis[ag->park_loc][ag->goal_loc];
+    int start = ag->park_loc;
+    int goal = ag->goal_loc;
+    int start_y = start%width;
+    int start_x = (start - start_y)/width;
+    int goal_y = goal%width;
+    int goal_x = (goal - goal_y)/width;
+    int dist = std::abs(start_x - goal_x) + std::abs(start_y - goal_y);
+
+    cost.push_back(dist);
     return cost;
 }
 
@@ -174,16 +182,17 @@ Simulation::Simulation(ScenarioLoader scen) {
             t++;
         }
     }
-    BFS();
+  //  BFS();
 }
 
 
 void Simulation::addTasks(ScenarioLoader scen, int qt) {
     agents.clear();
     agents.resize(qt);
-    Experiment exp = scen.GetNthExperiment(0);
+    Experiment exp = scen.GetNthExperiment(1);
     this->mapName = exp.GetMapName();
-
+    //this->Dis.resize(height*width, vector<long>(height*width));
+    int dist = 0;
     for (int i = 0; i < qt; i++) {
         Experiment exp = scen.GetNthExperiment(i);
         agents[i].id = i;
@@ -191,13 +200,23 @@ void Simulation::addTasks(ScenarioLoader scen, int qt) {
         int start_y = exp.GetStartY();
         int goal_x = exp.GetGoalX();
         int goal_y = exp.GetGoalY();
-        agents[i].park_loc = start_y  + start_x * width;
-        agents[i].loc = start_y + start_x * width ;
-        agents[i].goal_loc = goal_y + goal_x * width ;
+        dist = std::abs(start_x - goal_x) + std::abs(start_y - goal_y);
+        agents[i].park_loc = start_x  + start_y * width;
+        agents[i].loc = start_x + start_y * width ;
+        agents[i].goal_loc = goal_x + goal_y * width ;
+      //  bool t = my_map[agents[i].park_loc];
+      //  bool ta = my_map[agents[i].goal_loc];
+
         for (int j = 0; j < 10000; j++) {
             agents[i].path.push_back(-1);//stay still all the tiem
         }
     }
+
+ //   Agent *ag;
+ //   ag = &agents[0];
+  //  int cost = CalcCost(ag);
+ //   planPath(int start_loc, int goal_loc, int begin_time, vector<bool> my_map, int cost, int width)
+//    ag->planPath(ag->park_loc, ag->goal_loc, 0, my_map, dist, width);
 }
 
 void Simulation::printPath() {
@@ -214,6 +233,9 @@ void Simulation::printPath() {
 
 void Simulation::info() {
 
+    string res_file = "/home/carol/Desktop/Path Planning/ICBS/Resultados/icbs";
+    ofstream fout(res_file, ios::app);
+    if (!fout) cout << "ERR0 - salvar arquivo";
     int mkspn = 0, soc =0;
     for(int i = 0; i < agents.size(); i++){
         soc += agents[i].arrive_goal;
@@ -221,15 +243,16 @@ void Simulation::info() {
             mkspn = agents[i].arrive_goal;
         }
     }
+    fout << agents.size() << "," << mapName << "," << scenName << "," << mkspn << "," <<soc<<","<< no_generated << ","<<no_expanded <<","<<this->tempoPathPlan()<< endl;
+    fout.close();
+
     cout<<endl<<"qtd: "<<agents.size()<<" |map name: "<<mapName<<" |scen name: "<<scenName<<" |mkspn: "<<mkspn<<" |soc: "<<soc<<" |no gerados: "<<no_generated<<" |no expandido: "<<no_expanded<<" |TempoPathPlan: "<<this->tempoPathPlan() ;
-
 }
-
 void Simulation::printMap(ScenarioLoader scen) {
     char *mapChar = new char[height * width];
     for (int i = 0; i < height * width; i++) {
         if (scen.map[i] == 1)
-            mapChar[i] = '@';
+            mapChar[i] = '*';
         else if (scen.map[i] == 2)
             mapChar[i] = 'W';
         else if (scen.map[i] == 4)
@@ -248,15 +271,29 @@ void Simulation::printMap(ScenarioLoader scen) {
     }
 
 
-    std::cout << "MAP:";
+    std::cout << "MAP:"<<endl;
     int t = 0;
     for (int i = 0; i < height; i++) {
-        std::cout << std::endl;
+        std::cout <<i<< " ";
         for (int j = 0; j < width; j++) {
             std::cout << mapChar[t];
             t++;
         }
+        cout<<endl;
     }
     std::cout << std::endl;
     delete[] mapChar;
+}
+
+void Simulation::checkMap(){
+    for ( int ag = 0; ag < agents.size(); ag++) {
+        if(!my_map[agents[ag].park_loc]) cout<<"A posicao inicial de um agente "<<ag<<" esta em posicao que nao pode (parede)"<<endl;
+        if(!my_map[agents[ag].goal_loc]) cout<<"A posicao final de um agente "<<ag<<" esta em posicao que nao pode (parede)"<<endl;
+        for (int i = ag + 1; i < agents.size(); i++) {
+            if(agents[i].park_loc == agents[ag].park_loc) cout<<"Dois agentes "<<ag<<", "<<i<<" tem a mesma posicao inicial"<<endl;
+            if(agents[i].goal_loc == agents[ag].goal_loc) cout<<"Dois agentes "<<ag<<", "<<i<<" tem a mesma posicao final"<<endl; //n tem problema
+            if(agents[i].park_loc == agents[ag].goal_loc) cout<<"A posicao inicial de um agente "<<ag<<" eh igual a posicao final de outro agente"<<i<<endl; //n tem problema
+
+        }
+    }
 }

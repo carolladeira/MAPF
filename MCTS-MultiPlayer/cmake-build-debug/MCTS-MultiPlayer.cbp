@@ -86,6 +86,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/ScenarioLoader.cpp">
+			<Option target="mcts"/>
+		</Unit>
+		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/ScenarioLoader.h">
+			<Option target="mcts"/>
+		</Unit>
 		<Unit filename="/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.cpp">
 			<Option target="mcts"/>
 		</Unit>

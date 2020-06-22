@@ -28,9 +28,11 @@ class agent : public point{
     friend class point;
 
 public:
+    int id;
     point start;
     point goal;
     int dist;
+    char s,g;
     int final_timestep = 0;
     vector<point> path_agent;
 

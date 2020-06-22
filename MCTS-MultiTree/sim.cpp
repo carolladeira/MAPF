@@ -1,11 +1,3 @@
-//
-//  sim.cpp
-//  MAMCTS
-//
-//  Created by Nick Zerbel on 5/25/17.
-//  Copyright © 2017 Nick Zerbel. All rights reserved.
-//
-
 #include "sim.hpp"
 
 //GRIDWORLD PROBLEM---------------------------------------------------------------------------------------------------------
@@ -96,7 +88,6 @@ void gridworld::calculate_local(multi_agent *map, monte_carlo *mcp, multi_tree *
                     }
                     if(map->agent_at_goal == false){ //Agent is not at a goal
                         cout<<"agente nao chegou na posicao de destino"<<endl;
-
                         agent_rewards.at(a) = step_penalty;
                     }
                 }

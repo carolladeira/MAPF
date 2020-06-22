@@ -1,58 +1,12 @@
-//
-//  sim.cpp
-//  MAMCTS
-//
-//  Created by Nick Zerbel on 5/25/17.
-//  Copyright © 2017 Nick Zerbel. All rights reserved.
-//
 
 #include "sim.hpp"
+#include <iostream>
+#include <string>
 
-//GRIDWORLD PROBLEM---------------------------------------------------------------------------------------------------------
-void gridworld::initialize_parameters(multi_agent *map, monte_carlo *mcp) {
-    for (int i = 0; i < n_agents; i++) {
-        mcp->n_num_vec.push_back(0);
-        node_vec.push_back(0);
-        ag_in_play.push_back(true);
-        agent_rewards.push_back(0);
-        end_lev.push_back(0);
-    }
-    map->assign_agent_coordinates();
-    map->assign_goal_coordinates();
-    mcp->node_number = 0;
-    mcp->x_lim = x_dim;
-    mcp->y_lim = y_dim;
-
-    path_agents.resize(map->n_agents);
-
-    for (int i = 0; i < map->n_agents; i++) {
-        path_agents[i].push_back(map->agent_start_pos[i]);
-        int xstart = map->agent_start_pos[i].agent_x;
-        int ystart = map->agent_start_pos[i].agent_y;
-        int xgoal = map->goal_start_pos[i].agent_x;
-        int ygoal = map->goal_start_pos[i].agent_y;
-        double dist = std::abs(xstart- xgoal) + std::abs(ystart - ygoal);
-        cout<<"Agente "<<i<<" "<<xstart<<","<<ystart<<" | "<<xgoal<<","<<ygoal<<" | "<<dist<<endl;
-
-    }
-
-}
-
-
-void gridworld::reset_all_agents(multi_agent *map, multi_tree *tp) { //Resets all agents to initial positions
-    for (int i = 0; i < n_agents; i++) { //Agent Number
-      //  map->agent_vec.at(i).agent_x = tp->ag_tree.at(i).tree_vec.at(0).level_vec.at(0).x; //Initial X
-     //   map->agent_vec.at(i).agent_y = tp->ag_tree.at(i).tree_vec.at(0).level_vec.at(0).y; //Initial Y
-        node_vec.at(i) = 0;
-        ag_in_play.at(i) = true;
-    }
-}
-
-
-void gridworld::agente_move(multi_agent *map, multi_tree *tp, monte_carlo *mcp) {
+void gridworld::agente_move(multi_tree *tp, monte_carlo *mcp) {
 
     int a = 0;
-    std::vector<point> agents;
+    std::vector<point> agents_points;
     int parent_number = 0;
     point ag;
 
@@ -80,52 +34,49 @@ void gridworld::agente_move(multi_agent *map, multi_tree *tp, monte_carlo *mcp) 
                 ag.agent_y = agy;
                 if (!mcp->at_goal[id_agente]) {
                     path_agents[id_agente].push_back(ag);
-                    if(agx == map->goal_start_pos[id_agente].agent_x && agy == map->goal_start_pos[id_agente].agent_y){
+                    this->agents[id_agente].path_agent.push_back(ag);
+                    if (agx == this->agents[id_agente].goal.agent_x && agy == this->agents[id_agente].goal.agent_y) {
                         mcp->set_agent_goal(id_agente);
                         //cout<<"Agente"<<id_agente<<endl;
-                        map->agents[id_agente].final_timestep = path_agents[id_agente].size() - 1;
-                       // print_path();
+                        this->agents[id_agente].final_timestep = path_agents[id_agente].size() - 1;
                     }
-
                 }
 
-                //cout<<"Agente "<<id_agente<<" -> "<< agx << "," << agy<<endl;
-                //std::cout << "Node " << nn << " pos " << lev << " UCB1 " << ucb << " N-visit " << n_visit << " | " << agx << "," << agy << " parent  " << p_num << endl;
-                mcp->update_tree(tp, map, lev, en);
+//                cout<<"Agente "<<id_agente<<" -> "<< agx << "," << agy<<endl;
+//                std::cout << "Node " << nn << " pos " << lev << " UCB1 " << ucb << " N-visit " << n_visit << " | " << agx << "," << agy << " parent  " << p_num << endl;
+                mcp->update_tree(tp, lev, en);
                 return;
             }
         }
     }
 }
 
-
 void gridworld::print_path(monte_carlo *mcp) {
 
-    for (int i = 0; i < path_agents.size(); i++) {
-        cout << endl << "Agente " << i<<" ";
-        for (int j = 0; j < path_agents[i].size(); j++) {
-            cout << " -> ["<<j<<"]" << path_agents[i][j].agent_x << "," << path_agents[i][j].agent_y;
-        }
-    }
+//    for (int i = 0; i < path_agents.size(); i++) {
+//        cout << endl << "Agente " << i << " ";
+//        for (int j = 0; j < path_agents[i].size(); j++) {
+//            cout << " -> [" << j << "]" << path_agents[i][j].agent_x << "," << path_agents[i][j].agent_y;
+//        }
+//    }
 
 
     for (int i = 0; i < path_agents.size(); i++) {
-        if (!mcp->at_goal[i]){
-            cout << endl << "Agente " << i<<" ";
+        if (!mcp->at_goal[i]) {
+            cout << endl << "Agente " << i << " ";
             for (int j = 0; j < path_agents[i].size(); j++) {
-                cout << " -> " << path_agents[i][j].agent_x << "," << path_agents[i][j].agent_y;
+                cout << " -> [" << path_agents[i][j].agent_x + path_agents[i][j].agent_y * y_dim << "]" << path_agents[i][j].agent_x << "," << path_agents[i][j].agent_y;
             }
         }
 
     }
 }
 
-
 void gridworld::clear_all_vectors(multi_agent *map, monte_carlo *mcp, multi_tree *tp) {
     tp->ag_tree.clear();
     mcp->reward_vec.clear();
-   // map->agent_vec.clear();
-   // map->goal_vec.clear();
+    // map->agent_vec.clear();
+    // map->goal_vec.clear();
     map->agent_start_pos.clear();
     map->goal_start_pos.clear();
     mcp->n_num_vec.clear();
@@ -133,4 +84,100 @@ void gridworld::clear_all_vectors(multi_agent *map, monte_carlo *mcp, multi_tree
     ag_in_play.clear();
     agent_rewards.clear();
     end_lev.clear();
+}
+
+void gridworld::loadScen(ScenarioLoader scen, monte_carlo *mcp) {
+
+    this->x_dim = scen.width;
+    this->y_dim = scen.height;
+
+    mcp->node_number = 0;
+    mcp->x_lim = x_dim;
+    mcp->y_lim = y_dim;
+
+    this->my_map.resize(y_dim, vector<bool>(x_dim));
+    int t = 0;
+    for (int i = 0; i < y_dim; i++) {
+        for (int j = 0; j < x_dim; j++) {
+            //   my_map[j].resize(x_dim);
+            if (scen.map[t] == 1 || scen.map[t] == 2 || scen.map[t] == 4) {
+                my_map[j][i] = false;
+            } else {
+                my_map[j][i] = true;
+            }
+            t++;
+        }
+    }
+}
+
+void gridworld::addTasks(ScenarioLoader scen, int qt) {
+    agents.clear();
+    agents.resize(qt);
+    Experiment exp = scen.GetNthExperiment(1);
+    this->mapName = exp.GetMapName();
+    this->scenName = scen.GetScenarioName();
+    this->n_agents = qt;
+    this->path_agents.resize(qt);
+
+    int c = 97;
+    int ca = 65;
+    for (int i = 0; i < qt; i++) {
+        Experiment exp = scen.GetNthExperiment(i);
+        agents[i].id = i;
+        agents[i].start.agent_x = exp.GetStartX();
+        agents[i].start.agent_y = exp.GetStartY();
+        agents[i].goal.agent_x = exp.GetGoalX();
+        agents[i].goal.agent_y = exp.GetGoalY();
+        agents[i].s = c;
+        c++;
+        agents[i].g = ca;
+        ca++;
+        path_agents[i].push_back(agents[i].start);
+
+    }
+}
+
+void gridworld::print_map(int t) {
+
+    char *mapChar = new char[x_dim * y_dim];
+    int n = 0;
+    for (int y = 0; y < y_dim; y++) {
+        for (int x = 0; x < x_dim; x++) {
+            mapChar[n] = '.';
+            if (!my_map[x][y]) mapChar[n] = '*';
+            for (int i = 0; i < path_agents.size(); i++) {
+                if (path_agents[i][path_agents[i].size() - 1].agent_y == y &&
+                    path_agents[i][path_agents[i].size() - 1].agent_x == x) {
+                    mapChar[n] = agents[i].s;
+                }
+                if (agents[i].goal.agent_y == y && agents[i].goal.agent_x == x) {
+                    mapChar[n] = agents[i].g;
+                }
+            }
+            n++;
+        }
+    }
+    std::cout << "MAP:"<<endl;
+    int h = 0;
+    for (int i = 0; i < x_dim; i++) {
+        std::cout <<i<< " ";
+        for (int j = 0; j < y_dim; j++) {
+            std::cout << mapChar[h];
+            h++;
+        }
+        cout<<endl;
+    }
+    std::cout << std::endl;
+    delete[] mapChar;
+
+}
+
+void gridworld::info()
+{
+    for(int i = 0; i < agents.size(); i++){
+        soc += agents[i].final_timestep;
+        if(mkspn < agents[i].final_timestep){
+            mkspn = agents[i].final_timestep;
+        }
+    }
 }

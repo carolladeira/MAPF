@@ -45,9 +45,9 @@ void multi_tree::print_tree(int agn){
 
         for(int en = 0; en < ag_tree.at(agn).tree_vec.at(lev).level_vec.size(); en++){ //Rollout all newly expanded nodes
             int n_number = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).n_number;
-            int ucb = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).UCB1;
+            double ucb = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).UCB1;
             int n_visit = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).visit_count;
-            int q_value = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).q_node;
+            double q_value = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).q_node;
             int agx = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).x;
             int agy = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).y;
             int p_num = ag_tree.at(agn).tree_vec.at(lev).level_vec.at(en).p_number;

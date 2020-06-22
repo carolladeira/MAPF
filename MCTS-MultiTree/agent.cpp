@@ -10,8 +10,8 @@
 
 //Global Functions
 void multi_agent::create_config_list(int max_a, int xd, int yd, int nstat){ //nstat = number of stat runs, max_a = max number of agents
-    ifstream ac_x("/home/carol/Desktop/MCTS/Instances/agent_x_coords.txt"); ifstream ac_y("/home/carol/Desktop/MCTS/Instances/agent_y_coords.txt"); //These files contain agent starting positions
-    ifstream gc_x("/home/carol/Desktop/MCTS/Instances/goal_x_coords.txt"); ifstream gc_y("/home/carol/Desktop/MCTS/Instances/goal_y_coords.txt"); //These files contain goal positions
+    ifstream ac_x("/home/carol/Desktop/Path Planning/Instances/agent_x_coords.txt"); ifstream ac_y("/home/carol/Desktop/Path Planning/Instances/agent_y_coords.txt"); //These files contain agent starting positions
+    ifstream gc_x("/home/carol/Desktop/Path Planning/Instances/goal_x_coords.txt"); ifstream gc_y("/home/carol/Desktop/Path Planning/Instances/goal_y_coords.txt"); //These files contain goal positions
     agent a; goal g;
     //Create a master-list of agent and goal initial positions in gridworld. A different set for each statistical run
     for(int j = 0; j < nstat*max_a; j++){ //nstat*max_a = maximum number of configurations

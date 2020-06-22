@@ -85,6 +85,7 @@ void ScenarioLoader::MapLoader(const char *fname) {
     fscanf(f, "type octile\nheight %d\nwidth %d\nmap\n", &height, &width);
     map.resize(height * width);
     mapInfo.resize(height * width);
+    this->mapa.resize(height, std::vector<int>(width));
 
     for (int y = 0; y < height; y++) {
 
@@ -97,20 +98,26 @@ void ScenarioLoader::MapLoader(const char *fname) {
 
                 case '@': //out of bounds
                     map[y*width+x] = 1;
+                    mapa[y][x] =1;
                 case 'O': //out of bounds
                     map[y*width+x] = 1;
+                    mapa[y][x] =1;
                     break;
                 case 'S': //swamp (passable from regular terrain)
                     map[y*width+x] = 0;
+                    mapa[y][x] = 0;
                     break;
                 case 'W': //water (traversable, but not passable from terrain)
                     map[y*width+x] = 2;
+                    mapa[y][x] = 2;
                     break;
                 case 'T': //trees (unpassable)
                     map[y*width+x] = 4;
+                    mapa[y][x] = 4;
                     break;
                 default: //passable terrain (.,G)
                     map[y*width+x] = 0;
+                    mapa[y][x] = 0;
                     break;
             }
             mapInfo[y*width+x].x = x;

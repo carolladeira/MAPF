@@ -37,7 +37,7 @@ public:
     double tempoTotalGA;
     double tempoTotalPathPlan;
 
-    vector<vector<int> > Dis;
+    vector<vector<long> > Dis;
     vector<Agent> agents;
 
     uint64_t no_expanded;
@@ -55,6 +55,8 @@ public:
 
     void runSearch(ScenarioLoader scen);
     void addTasks(ScenarioLoader scen, int qt);
+
+    void checkMap();
 
     void BFS();
 

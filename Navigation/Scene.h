@@ -15,14 +15,14 @@ public:
     ~Scene() {};
 
 
-    void drawScene(Nav *navMesh, Agente *agente, int nWall, ScenarioLoader scen);
+    void drawScene(Nav *navMesh, Agente agente, int nWall, ScenarioLoader scen);
     void drawObstacles(ScenarioLoader scen);
     void drawAgent(Nav *navMesh);
     void drawMeshes(Nav *navMesh, int nWall);
     void drawGraph(ScenarioLoader scen);
   //  void drawPath(DStar *dStar);
    // void drawPathDStar(DStar *dstar);
-    void drawPathAtual(Agente *agente);
+    void drawPathAtual(Agente agente);
 
 
 

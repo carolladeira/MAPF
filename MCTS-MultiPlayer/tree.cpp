@@ -1,10 +1,3 @@
-//
-//  tree.cpp
-//  MAMCTS
-//
-//  Created by Nicholas Zerbel on 5/25/17.
-//  Copyright © 2017 Nicholas Zerbel. All rights reserved.
-//
 
 #include "tree.hpp"
 
@@ -24,7 +17,6 @@ void multi_tree::create_root_node(int lev, int pos, double agx, double agy, int 
         ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).pos_agentes[i].agent_x = -1;
         ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).pos_agentes[i].agent_y = -1;
     }
-
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).a_number = agente; //Each node stores the point's identifier
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).x = agx; //X-coordinate of a state mapped in the tree
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).y = agy; //Y-Coordinate of a state mapped in the tree
@@ -51,7 +43,6 @@ void multi_tree::create_node(int lev, int pos, double agx, double agy, int ag_nu
         }
     }
 
-
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).a_number = agente; //Each node stores the point's identifier
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).x = agx; //X-coordinate of a state mapped in the tree
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).y = agy; //Y-Coordinate of a state mapped in the tree
@@ -64,8 +55,6 @@ void multi_tree::create_node(int lev, int pos, double agx, double agy, int ag_nu
 
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).pos_agentes[agente].agent_x = agx;
     ag_tree.at(ag_num).tree_vec.at(lev).level_vec.at(pos).pos_agentes[agente].agent_y = agy;
-
-
     //std::cout << "Create node " << node_num << " Agente: " << ag_num << " level " << lev << " pos " << pos << " | "<< agx << "," << agy << " parent number " << p_num << endl;
 
 }

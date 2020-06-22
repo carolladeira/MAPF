@@ -1,10 +1,3 @@
-//
-//  mcts.hpp
-//  MAMCTS
-//
-//  Created by Nicholas Zerbel on 5/25/17.
-//  Copyright © 2017 Nicholas Zerbel. All rights reserved.
-//
 
 #ifndef mcts_hpp
 #define mcts_hpp
@@ -23,13 +16,15 @@ using namespace std;
 
 class monte_carlo{
 public:
-    void set_mc_parameters(multi_tree *tp, int a);
-    void create_root_nodes(multi_tree *tp, multi_agent *map);
+    monte_carlo(){}
 
-    void update_tree(multi_tree *tp, multi_agent *map, int level, int n);
+    void set_mc_parameters(multi_tree *tp, std::vector<std::vector<bool>> my_map);
+    void create_root_nodes(multi_tree *tp, vector<agent> agentes);
+
+    void update_tree(multi_tree *tp, int level, int n);
     void set_agent_goal(int id_agente);
 
-    void mc_search(multi_tree *tp, multi_agent *map);
+    void mc_search(multi_tree *tp);
 
     void print_path(multi_tree *tp,int a);
     void check_goalAndColision(multi_tree *tp,int a, multi_agent *map);
@@ -54,7 +49,7 @@ public:
     
     //SIMULATION
     int select_node(multi_tree *tp); //Select an expanded node for rollout
-    void rollout(multi_tree *tp, multi_agent *map, int n);
+    void rollout(multi_tree *tp, int n);
     void calculate_node_value(multi_tree *tp, int n);
     
     //BACK-PROPAGATION
@@ -62,6 +57,9 @@ public:
     void back_propagate_evals(multi_agent *map, multi_tree *tp, double reward, int agn, int l, int nn);
     
     //Parameters
+    uint64_t no_expanded = 0;
+    uint64_t no_generated = 0;
+
     vector <double> reward_vec;
     vector <int> n_num_vec;
     bool action_check; //Flags possible actions as valid or invalid
@@ -84,6 +82,7 @@ public:
     
     //Experimental Parameters
     int rollout_steps; //Number of rollout iterations
+    int rollout_iterations; //Number of rollout iterations
     double epsilon; //Exploration vs Exploitation parameter for UCB1
     double rollout_reward;
     double num;
@@ -104,6 +103,9 @@ public:
 
     vector<bool> at_goal;
     std::vector<vector<point>> list_agents;
+
+    std::vector<std::vector<bool>> my_map;
+
 };
 
 #endif /* mcts_hpp */

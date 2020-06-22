@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mcts.dir/mcts.cpp.o"
   "CMakeFiles/mcts.dir/sim.cpp.o"
   "CMakeFiles/mcts.dir/tree.cpp.o"
+  "CMakeFiles/mcts.dir/ScenarioLoader.cpp.o"
   "mcts.pdb"
   "mcts"
 )

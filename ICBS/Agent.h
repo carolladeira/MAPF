@@ -37,26 +37,26 @@ public:
     bool only_dummy;
     int start_time;
     vector<int> non_dummy_path;
-    int debug;
-    Endpoint *ep_park_loc;
-    Endpoint* next_ep;
-    bool delivering;
-    Task *task;
+   // Endpoint *ep_park_loc;
+  //  Endpoint* next_ep;
+  //  bool delivering;
+ //   Task *task;
 
     double timepathPlan;
+    vector<bool> my_map;
+    int width;
 
-
-    int AStar_sCol(int start_loc, Endpoint *goal, int begin_time, Token token, bool evaluate, bool coleta);
 
     void setAgent(int loc, int col, int row, int id);
     Task* bestTask(Token token);
 
-    int AStar(int start_loc, Endpoint *goal, int begin_time, Token token, bool evaluate, bool coleta);
-    bool isConstrained(int curr_id, int next_id, int next_timestep, Token token, int ag_hide);
+    int AStar(int start_loc, int goal, int begin_time, int cost, bool evaluate, bool coleta);
+    bool isConstrained(int curr_id, int next_id, int next_timestep, int ag_hide);
     void updatePath(Node *goal);
     void releaseClosedListNodes(map<unsigned int, Node*> &allNodes_table);
     bool Move2EP(Token &token, bool constraint);
-    int planPath(int start_loc, Endpoint *goal, int begin_time, Token &token);
+    int planPath(int start_loc, int goal_loc, int begin_time, vector<bool> my_map, int cost, int width);
+    int dist(int start, int goal);
 
 
 };

@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.cpp
-agent.hpp
-/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
-
 /home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
 cstdlib
 -
@@ -21,4 +17,42 @@ assert.h
 -
 fstream
 -
+
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.cpp
+mcts.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.hpp
+numeric
+-
+
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.hpp
+cstdlib
+-
+iostream
+-
+vector
+-
+cmath
+-
+assert.h
+-
+algorithm
+-
+tree.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.hpp
+agent.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
+
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.hpp
+cstdlib
+-
+vector
+-
+fstream
+-
+iostream
+-
+assert.h
+-
+agent.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
 

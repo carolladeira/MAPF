@@ -36,6 +36,7 @@ class Nav {
 public:
     int n_agents;
     std::vector<Agente>agentes;
+    void read_file(string arq, int width);
     int tamanho;
     Nav(ScenarioLoader scen);
     virtual ~Nav(){};

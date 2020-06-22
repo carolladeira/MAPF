@@ -60,6 +60,7 @@ public:
     int width;
     std::vector<int> map;
     std::vector<Loc> mapInfo;
+    std::vector<std::vector<int>> mapa;
 
 
     void MapLoader(const char *fname);

@@ -1,10 +1,3 @@
-//
-//  tree.hpp
-//  MAMCTS
-//
-//  Created by Nicholas Zerbel on 5/25/17.
-//  Copyright © 2017 Nicholas Zerbel. All rights reserved.
-//
 
 #ifndef tree_hpp
 #define tree_hpp

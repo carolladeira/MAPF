@@ -35,20 +35,21 @@ int main() {
     //Testing Parameters
     int stat_runs = 1; //Number of statistical runs : 30
     int max_run = 10000;//Cuts off the simulation if the number of iterations exceed this amount : 10000
-    int agent_increment = 1; //Increases the number of agents in a simulation by this amount
-    int starting_agents = 7; //Initial number of agents being tested
-    int max_agents = 7; //Maximum number of agents to be tested
+    int agent_increment = 0; //Increases the number of agents in a simulation by this amount
+    int starting_agents = 2; //Initial number of agents being tested
+    int max_agents = 2; //Maximum number of agents to be tested
     g.x_dim = 8; //Maximum X Dimension
     g.y_dim = 8; //Maximum Y Dimension
     mcp->epsilon = 10; //UCB1 exploration constant (0 = greedy action selection)
     mcp->rollout_steps = 15;//Number of rollout moves //15
+    mcp->rollout_iterations = 3;
     gp->max_lev = g.x_dim + g.y_dim;
     mcp->max_lev = g.x_dim + g.y_dim; //Cutoff point in tree where tree cannot expand any further
     int success_count; //Counts the number of successful runs (all goals captured)
     
     //Rewards and Penalties
     g.goal_reward = 100; //Reward for reaching an unclaimed goal
-    mcts.rollout_reward = 1; //Reward received during MCTS rollout for discovering a goal
+    mcts.rollout_reward = 0.5; //Reward received during MCTS rollout for discovering a goal
     g.step_penalty = -1; //Cost of each step taken by an agent in Gridworld
 
     map->create_config_list(max_agents, g.x_dim, g.y_dim, stat_runs);
@@ -63,24 +64,15 @@ int main() {
                 for(int its = 0; its < max_run; its++){
                     for(int anum = 0; anum < g.n_agents; anum++){ //anum = agent number
                         cout << " ============================= Agente "<< anum<<" ===========================" << endl;
-
                         mcts.set_mc_parameters(tp, anum);
                         mcts.mc_search(tp, map); //Runs MCTS for defined number of expansions
                         mcts.n_num_vec.at(anum) = mcts.node_number; //Used to track what the current node number is in each tree
                     }
                     g.cred_evals(map, tp, mcp);
-                    
+
                     //Check to see if agents have arrived at goals
                     g.system_rollout(map, tp, mcp);
-                    if(its == (max_run-1)){
-                        success_count = m.record_goal_captures(); //Record number of goals captured in final iteration
-                    }
                     g.reset_all_agents(map, tp);
-                    if(g.n_agents == max_agents){ //Record system reward (only for max agents)
-                        if(c == 1){L_sysr << g.sys_reward << "\t";}
-                        if(c == 2){G_sysr << g.sys_reward << "\t";}
-                        if(c == 3){D_sysr << g.sys_reward << "\t";}
-                    }
                 }
                 for(int anum = 0; anum < g.n_agents; anum++){
                     cout<<endl<<"Agente: "<<anum<<" ---> ";
@@ -88,26 +80,9 @@ int main() {
                     mcts.print_path(tp,anum);
                 }
                 mcts.check_goalAndColision(tp,0, map);
-
-
-                if(g.n_agents == max_agents){ //Record system reward (only for max agents)
-                    if(c == 1){L_sysr << "\n";}
-                    if(c == 2){G_sysr << "\n";}
-                    if(c == 3){D_sysr << "\n";}
-                }
-                if(c == 1){L_succ << success_count << "\t";}
-                if(c == 2){G_succ << success_count << "\t";}
-                if(c == 3){D_succ << success_count << "\t";}
-                g.clear_all_vectors(map, mcp, tp); //Begin new stat run
             }
-            if(c == 1){L_succ << "\n";}
-            if(c == 2){G_succ << "\n";}
-            if(c == 3){D_succ << "\n";}
-            g.n_agents += agent_increment;
         }
     }
-    D_sysr.close(); G_sysr.close(); L_sysr.close();
-    D_succ.close(); G_succ.close(); L_succ.close();
 
 
     return 0;

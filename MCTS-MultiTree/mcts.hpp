@@ -56,8 +56,11 @@ public:
     //BACK-PROPAGATION
     void back_propagate(multi_tree *tp);
     void back_propagate_evals(multi_agent *map, multi_tree *tp, double reward, int agn, int l, int nn);
-    
+
     //Parameters
+    uint64_t no_expanded = 0;
+    uint64_t no_generated = 0;
+
     vector <double> reward_vec;
     vector <int> n_num_vec;
     bool action_check; //Flags possible actions as valid or invalid
@@ -77,6 +80,7 @@ public:
     
     //Experimental Parameters
     int rollout_steps; //Number of rollout iterations
+    int rollout_iterations; //Number of rollout iterations
     double epsilon; //Exploration vs Exploitation parameter for UCB1
     double rollout_reward;
     double num;

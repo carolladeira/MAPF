@@ -24,7 +24,6 @@ inline void ICBSSearch::updatePaths(ICBSNode *curr) {
     }
 }
 
-
 vector<list<tuple<int, int, bool> > > *ICBSSearch::collectConstraints(ICBSNode *curr, int agent_id) {
     std::clock_t t1 = std::clock();
     // extract all constraints on agent_id
@@ -130,7 +129,6 @@ vector<list<tuple<int, int, bool> > > *ICBSSearch::collectConstraints(ICBSNode *
     return cons_vec;
 }
 
-
 int ICBSSearch::computeHeuristics(const ICBSNode &curr) {
     //if (curr.cardinalConf.size() < 2)
     //	return curr.cardinalConf.size();
@@ -186,7 +184,6 @@ int ICBSSearch::computeHeuristics(const ICBSNode &curr) {
         return curr.parent->h_val + 1;
 }
 
-
 /// <summary>
 /// Whether there exists a k-vertex cover solution
 /// </summary>
@@ -227,7 +224,6 @@ bool ICBSSearch::KVertexCover(const vector<vector<bool>> &CG, int num_of_CGnodes
     }
     return false;
 }
-
 
 void ICBSSearch::findConflicts(ICBSNode &curr) {
     if (curr.parent != NULL) {
@@ -405,7 +401,6 @@ void ICBSSearch::buildMDD(ICBSNode &curr, int id, int lookahead = 0) {
     delete mdd;
     delete cons_vec;
 }
-
 
 std::shared_ptr<tuple<int, int, int, int, int>> ICBSSearch::chooseConflict(ICBSNode &parent) {
     //Conflict* chosenCon = NULL;
@@ -1035,7 +1030,6 @@ bool ICBSSearch::generateChild(ICBSNode *node, ICBSNode *curr) {
     return true;
 }
 
-
 void ICBSSearch::printPaths() const {
     for (int i = 0; i < num_of_agents; i++) {
         std::cout << "Agent " << i << " (" << paths_found_initially[i].size() - 1 << " -->" <<
@@ -1184,7 +1178,7 @@ int ICBSSearch::runICBSSearch() {
     while (!focal_list.empty() && !solution_found) {
         // break after 5 min
         runtime = (std::clock() - start) / (double) CLOCKS_PER_SEC;
-        if (runtime > /*TIME_LIMIT*/ 300 || HL_num_expanded > 10000000) {  // timeout after 5 minutes
+        if (runtime > /*TIME_LIMIT*/ 30 || HL_num_expanded > 10000000) {  // timeout after 5 minutes
             cout << "TIMEOUT  ; " << solution_cost << " ; " << min_f_val - dummy_start->g_val << " ; " <<
                  HL_num_expanded << " ; " << HL_num_generated << " ; " <<
                  LL_num_expanded << " ; " << LL_num_generated << " ; " << runtime << " ; " << endl;
@@ -1557,15 +1551,14 @@ ICBSSearch::ICBSSearch(const vector<bool> &my_map, vector<Agent *> &agents, doub
         updateReservationTable(res_table, i, *dummy_start);
         //cout << "*** CALCULATING INIT PATH FOR AGENT " << i << ". Reservation Table[MAP_SIZE x MAX_PLAN_LEN]: " << endl;
         //printResTable(res_table, max_plan_len);
-        if (search_engines[i]->findPath(paths_found_initially[i], goal_length_initially[i], f_w, NULL, res_table,
-                                        dummy_start->makespan + 1, 0) == false) {
+        if (search_engines[i]->findPath(paths_found_initially[i], goal_length_initially[i], f_w, NULL, res_table,dummy_start->makespan + 1, 0) == false) {
             cout << "NO SOLUTION EXISTS";
         }
-        /*printf("[%d %d]: ", paths_found_initially[i].size(), goal_length_initially[i]);
-        for (int j = 0; j < paths_found_initially[i].size(); j++) {
-            printf("%d ", paths_found_initially[i][j].location);
-        }
-        printf("\n");*/
+       // printf("[%d %d]: ", paths_found_initially[i].size(), goal_length_initially[i]);
+//        for (int j = 0; j < paths_found_initially[i].size(); j++) {
+//           // printf("%d ", paths_found_initially[i][j].location);
+//        }
+     //   printf("\n");
         //dummy_start->paths[i] = search_engines[i]->getPath();
         paths[i] = &paths_found_initially[i];
         dummy_start->makespan = max(dummy_start->makespan, paths_found_initially[i].size() - 1);

@@ -123,6 +123,33 @@ mcts/fast:
 	$(MAKE) -f CMakeFiles/mcts.dir/build.make CMakeFiles/mcts.dir/build
 .PHONY : mcts/fast
 
+ScenarioLoader.o: ScenarioLoader.cpp.o
+
+.PHONY : ScenarioLoader.o
+
+# target to build an object file
+ScenarioLoader.cpp.o:
+	$(MAKE) -f CMakeFiles/mcts.dir/build.make CMakeFiles/mcts.dir/ScenarioLoader.cpp.o
+.PHONY : ScenarioLoader.cpp.o
+
+ScenarioLoader.i: ScenarioLoader.cpp.i
+
+.PHONY : ScenarioLoader.i
+
+# target to preprocess a source file
+ScenarioLoader.cpp.i:
+	$(MAKE) -f CMakeFiles/mcts.dir/build.make CMakeFiles/mcts.dir/ScenarioLoader.cpp.i
+.PHONY : ScenarioLoader.cpp.i
+
+ScenarioLoader.s: ScenarioLoader.cpp.s
+
+.PHONY : ScenarioLoader.s
+
+# target to generate assembly for a file
+ScenarioLoader.cpp.s:
+	$(MAKE) -f CMakeFiles/mcts.dir/build.make CMakeFiles/mcts.dir/ScenarioLoader.cpp.s
+.PHONY : ScenarioLoader.cpp.s
+
 agent.o: agent.cpp.o
 
 .PHONY : agent.o
@@ -267,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... mcts"
 	@echo "... edit_cache"
+	@echo "... ScenarioLoader.o"
+	@echo "... ScenarioLoader.i"
+	@echo "... ScenarioLoader.s"
 	@echo "... agent.o"
 	@echo "... agent.i"
 	@echo "... agent.s"

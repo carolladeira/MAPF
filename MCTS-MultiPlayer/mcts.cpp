@@ -9,20 +9,18 @@
 #include "mcts.hpp"
 #include <numeric>
 
-
-//#define EXPAND
+#define EXPAND
 #define ROLLOUT
 #define ROLLOUT2
-//#define SELECT
+#define SELECT
 #define MCSEARCH
 #define BACK_PROPAGATE
 
 
-void monte_carlo::set_mc_parameters(multi_tree *tp, int a) {
+void monte_carlo::set_mc_parameters(multi_tree *tp, std::vector<std::vector<bool>> my_map) {
     a_num = 0;
-    agente = a;
     lev = 0;
-    //node_number = n_num_vec.at(a_num);
+    this->my_map = my_map;
 }
 
 void monte_carlo::set_agent_goal(int id_agente) {
@@ -167,38 +165,38 @@ int monte_carlo::select_move(multi_tree *tp, int agn, int l) { //(point number, 
     return action;
 }
 
-void monte_carlo::create_root_nodes(multi_tree *tp, multi_agent *map) {
+void monte_carlo::create_root_nodes(multi_tree *tp, vector<agent> agentes) {
     // cout << " ************** CREATE ROOT NODES ****************" << endl;
 
     agente = 0;
-    pos_agentes.resize(map->n_agents);
-    start_agentes.resize(map->n_agents);
-    goal_agentes.resize(map->n_agents);
+    max_agents = agentes.size();
+    pos_agentes.resize(max_agents);
+    start_agentes.resize(max_agents);
+    goal_agentes.resize(max_agents);
 
-    max_agents = map->n_agents;
 
-    for (int ag = 0; ag < map->n_agents; ag++) { //Create Root Nodes
-        pos_agentes[ag].agent_x = map->agent_start_pos.at(ag).agent_x;
-        pos_agentes[ag].agent_y = map->agent_start_pos.at(ag).agent_y;
+    for (int ag = 0; ag < max_agents; ag++) { //Create Root Nodes
+        pos_agentes[ag].agent_x = agentes.at(ag).start.agent_x;
+        pos_agentes[ag].agent_y = agentes.at(ag).start.agent_y;
 
-        start_agentes[ag].agent_x = map->agent_start_pos.at(ag).agent_x;
-        start_agentes[ag].agent_y = map->agent_start_pos.at(ag).agent_y;
+        start_agentes[ag].agent_x = agentes.at(ag).start.agent_x;
+        start_agentes[ag].agent_y = agentes.at(ag).start.agent_y;
 
-        goal_agentes[ag].agent_x = map->goal_start_pos.at(ag).agent_x;
-        goal_agentes[ag].agent_y = map->goal_start_pos.at(ag).agent_y;
+        goal_agentes[ag].agent_x = agentes.at(ag).goal.agent_x;
+        goal_agentes[ag].agent_y = agentes.at(ag).goal.agent_y;
     }
 
     tp->create_tree(); //Create a tree for each point
     tp->create_level(agente); //Create Root Level
     n_nodes = tp->ag_tree.at(agente).tree_vec.at(0).level_vec.size();
-    tp->create_root_node(0, n_nodes, -1, -1, 0, node_number, 0, -1, -1, map->n_agents); //Root Node
+    tp->create_root_node(0, n_nodes, -1, -1, 0, node_number, 0, -1, -1, max_agents); //Root Node
 
 }
 
 //update tree, update root node n = posicao
-void monte_carlo::update_tree(multi_tree *tp, multi_agent *map, int level, int n) {
+void monte_carlo::update_tree(multi_tree *tp, int level, int n) {
     int a = 0;
-    //update root node level 0, no do level 1 vira root level 0
+    //update no raiz (level 0), o no do level 1 vira raiz (level 0)
     tp->ag_tree.at(0).tree_vec.at(0).level_vec.at(0) = tp->ag_tree.at(0).tree_vec.at(level).level_vec.at(n);
     vector<int> parents;
 
@@ -207,9 +205,7 @@ void monte_carlo::update_tree(multi_tree *tp, multi_agent *map, int level, int n
             parents.push_back(tp->ag_tree.at(a).tree_vec.at(1).level_vec.at(en).n_number);
         }
     }
-
-
-    //deleta 1 nivel da arvore
+    //deleta nivel  1 da arvore
     tp->ag_tree.at(0).tree_vec.erase(tp->ag_tree.at(0).tree_vec.begin() + 1);
 
 
@@ -228,9 +224,7 @@ void monte_carlo::update_tree(multi_tree *tp, multi_agent *map, int level, int n
 
 }
 
-
-void monte_carlo::mc_search(multi_tree *tp, multi_agent *map) { //4-step MCTS process
-
+void monte_carlo::mc_search(multi_tree *tp) { //4-step MCTS process
 #ifndef MCSEARCH
     cout << " ==========================================" << endl;
 tp->print_tree(a_num);
@@ -238,19 +232,16 @@ cout << " ==========================================" << endl;
 cout << " ************** MC SEARCH ****************" << endl;
 
 #endif
-
-
     select(tp);
     expand(tp);
     for (int en = 0;
          en < tp->ag_tree.at(a_num).tree_vec.at(lev).level_vec.size(); en++) { //Rollout all newly expanded nodes
         if (parent_number == tp->ag_tree.at(a_num).tree_vec.at(lev).level_vec.at(en).p_number) {
-            rollout(tp, map, en);
+            rollout(tp, en);
         }
     }
     back_propagate(tp);
 }
-
 
 //SELECTION------------------------------------------------------------------------------------------------------------
 void monte_carlo::select(multi_tree *tp) {
@@ -270,7 +261,6 @@ void monte_carlo::select(multi_tree *tp) {
         p_lev = 0;
         lev = 1;
 #ifndef SELECT
-
         cout << "(Arvore na raiz, pula select e vai pra fase de expand)" << endl;
 #endif
 
@@ -366,12 +356,20 @@ void monte_carlo::expand(multi_tree *tp) {
         previous_x = pos_agentes[agente].agent_x;
         previous_y = pos_agentes[agente].agent_y;
     }
+    /// se os agentes desaparecem quando chegam no final.
+    for(int i =0; i < max_agents; i++){
+        if(at_goal[i]){
+            pos_agentes[i].agent_x = -1;
+            pos_agentes[i].agent_y = -1;
+
+        }
+    }
 #ifndef SELECT
     cout << " AGENTE " << agente << " - " << previous_x << "," << previous_y<< endl;
 
     cout << " ************** EXPAND ****************" << endl;
 #endif
-
+    no_expanded++;
 
     if (lev == tp->ag_tree.at(a_num).tree_vec.size()) {
         tp->create_level(a_num);
@@ -495,6 +493,12 @@ void monte_carlo::check_boundaries(double xx, double yy) { //Illegal actions are
     if (yy < 0) {
         action_check = false;
     }
+    if(action_check){
+        if(!my_map[xx][yy]){
+            action_check = false;
+        }
+    }
+
     //checar colisao com outros agentes de acordo com a posicao dos agentes nos n'os pais
     for (int i = 0; i < pos_agentes.size(); i++) {
         if (agente == i) continue;
@@ -506,24 +510,25 @@ void monte_carlo::check_boundaries(double xx, double yy) { //Illegal actions are
 }
 
 void monte_carlo::prune(multi_tree *tp, int l) { //A state is not visited more than once along a decision path
-    double prune_x, prune_y;
-    for (int i = l - 1;
-         i >= 0; i--) { //Starting from the parent level, make sure no duplicate states are already in the tree
-        for (int j = 0; j < tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.size(); j++) {
-            prune_x = tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).x;
-            prune_y = tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).y;
-            if (ax == prune_x && ay == prune_y) { //If a state has been visited before, prune the tree
-                action_check = false;
-                break;
-            }
-        }
-        if (action_check == false) {
-            break;
-        }
-    }
+//    double prune_x, prune_y;
+//    for (int i = l - 1;
+//         i >= 0; i--) { //Starting from the parent level, make sure no duplicate states are already in the tree
+//        for (int j = 0; j < tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.size(); j++) {
+//            prune_x = tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).x;
+//            prune_y = tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).y;
+//            if (ax == prune_x && ay == prune_y) { //If a state has been visited before, prune the tree
+//                action_check = false;
+//                break;
+//            }
+//        }
+//        if (action_check == false) {
+//            break;
+//        }
+//    }
 }
 
 void monte_carlo::update_node_numbers(multi_tree *tp) {
+    no_generated ++;
     node_number++;
     n_nodes = tp->ag_tree.at(a_num).tree_vec.at(lev).level_vec.size();
 }
@@ -534,7 +539,7 @@ void monte_carlo::reset_coordinates() { //Reset point coordinates to parent node
 }
 
 //Rollout-----------------------------------------------------------------------------------------------------------------
-void monte_carlo::rollout(multi_tree *tp, multi_agent *map, int n) { //n = node position in level of tree
+void monte_carlo::rollout(multi_tree *tp, int n) { //n = node position in level of tree
 
 
     int a = 0;
@@ -562,7 +567,7 @@ void monte_carlo::rollout(multi_tree *tp, multi_agent *map, int n) { //n = node 
     cout << "dist " << dist;
 #endif
 
-    while (a < 3) {
+    while (a < rollout_iterations) {
         x = tp->ag_tree.at(a_num).tree_vec.at(lev).level_vec.at(n).x;
         y = tp->ag_tree.at(a_num).tree_vec.at(lev).level_vec.at(n).y;
 
@@ -633,7 +638,7 @@ void monte_carlo::rollout(multi_tree *tp, multi_agent *map, int n) { //n = node 
 #endif
             //if act == 4, no move is made (stand still)
             // for(int j = 0; j < map->n_agents; j++){
-            if (x == map->goal_start_pos.at(agente).agent_x && y == map->goal_start_pos.at(agente).agent_y) {
+            if (x == goal_agentes.at(agente).agent_x && y == goal_agentes.at(agente).agent_y) {
                 q_val += rollout_reward; //Receive a rollout reward when a goal is reached
                 break;
             }
@@ -684,10 +689,10 @@ void monte_carlo::back_propagate(multi_tree *tp) {
                 tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).visit_count += 1;
                 node_visit = tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).visit_count;
               //  tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).q_node = q_prev + q_val;
-               tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).q_node = q_prev + ((q_val - q_prev) / node_visit);
+                tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).q_node = q_prev + ((q_val - q_prev) / node_visit);
                 parent_number = tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).p_number;
 #ifndef BACK_PROPAGATE
-                cout << "Node: " << tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).n_number << " "<< tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).q_node << endl;
+                cout << "Node: " << tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).n_number << " q-new: "<< tp->ag_tree.at(a_num).tree_vec.at(i).level_vec.at(j).q_node <<" q-prev: "<<q_prev<<" visit: "<<node_visit<<" m: "<<q_val<< endl;
 #endif
                 break;
             }

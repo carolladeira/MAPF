@@ -10,23 +10,23 @@
 
 using namespace std;
 
-void Scene::drawScene(Nav *navMesh, Agente *agente, int nWall, ScenarioLoader scen) {
+void Scene::drawScene(Nav *navMesh, Agente agente, int nWall, ScenarioLoader scen) {
     this->drawObstacles(scen);
-  //  this->drawGraph(scen);
+    this->drawGraph(scen);
     this->drawAgent(navMesh);
 //    this->drawMeshes(navMesh, nWall);
     //this->drawPath(dstar);
     // this->drawPathDStar(dstar);
-    this->drawPathAtual(agente);
+   // this->drawPathAtual(agente);
 
 
 }
 
-void Scene::drawPathAtual(Agente *agente) {
+void Scene::drawPathAtual(Agente agente) {
     glPointSize((GLfloat) 5.0f);
     glColor3f(1.0, 0.0, 0.0); //red
     glBegin(GL_POINTS);
-    glVertex2f(agente->atual.x, agente->atual.y);
+    glVertex2f(agente.atual.x, agente.atual.y);
     glEnd();
 #ifdef DEBUG
     std::cout <<agente->atual.x << ","<<agente->atual.y<< " --- ";
@@ -35,7 +35,7 @@ void Scene::drawPathAtual(Agente *agente) {
 
 ///desenha agente
 void Scene::drawAgent(Nav *nav) {
-    glPointSize((GLfloat)5.0f);
+    glPointSize((GLfloat)10.0f);
 
     for (int i = 0; i < nav->n_agents; i++) {
 

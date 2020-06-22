@@ -14,4 +14,6 @@ add_executable(mcts
         sim.cpp
         sim.hpp
         tree.cpp
-        tree.hpp)
+        tree.hpp
+        ScenarioLoader.h
+        ScenarioLoader.cpp)

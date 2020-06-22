@@ -19,11 +19,12 @@
 ///formula inversa  =  id/ 50 = j (coluna horizontal), id%50 = i coluna vertical
 ScenarioLoader *scenLoad;
 Scene *scene;
-Agente *agente;
+Agente agente;
 Nav *navMesh;
 int contador =0;
 int height;
 int width;
+Point m;
 
 void reshape(int, int);
 void display(void);
@@ -53,6 +54,8 @@ int main(int argc, char** argv) {
 
     init();
 
+
+
     glutMainLoop();
 
     return 0;
@@ -80,7 +83,9 @@ void display (void)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     scene->drawScene(navMesh, agente, num_paredes, *scenLoad);
+    scene->drawAgent(navMesh);
     scene->drawObstacles(*scenLoad);
+    scene->drawPathAtual(agente);
 
 
     glFlush ();
@@ -89,17 +94,29 @@ void display (void)
 
 void idle()
 {
-    usleep(20000);
+    //for( int i=0;  navMesh->agentes[0].path.size(); i++){
+        usleep(200000);
+    std::cout<<contador<<std::endl;
     contador++;
-    glutPostRedisplay();
+         m = navMesh->agentes[0].path[contador];
+        agente.atual.x = m.x;
+        agente.atual.y = m.y;
+        glutPostRedisplay();
+
+
+
+        //scene->drawPathAtual(navMesh->agentes[0].path[i]);
+   // }
+
 
 }
 
 void init()
 {
     glClearColor(1.0, 1.0, 1.0, 0.0);
-    const char *scen_file = "/home/carol/Desktop/Path Planning/scenarios/dao/arena2.map.scen";
-    const char *map_file = "/home/carol/Desktop/Path Planning/maps/dao/arena2.map";
+    const char *scen_file = "/home/carol/Desktop/Path Planning/scenarios/City/Berlin_1_256.map-scen-random/scen-random/Berlin_1_256-random-1.scen";
+    const char *map_file = "/home/carol/Desktop/Path Planning/maps/City/Berlin_1_256.map";
+    string cam = "/home/carol/Desktop/test.txt";
 
 
     scenLoad = new ScenarioLoader(scen_file);
@@ -109,8 +126,10 @@ void init()
 
 
     scene = new Scene();
-    agente = new Agente();
+    //agente = new Agente();
     navMesh = new Nav(*scenLoad);
+    navMesh->read_file(cam, width);
+    agente = navMesh->agentes[0];
 }
 
 
