@@ -23,64 +23,90 @@ using namespace std;
 int main() {
     //srand( time(NULL) ); //Seed random generator
     srand(8);
-    gridworld g; monte_carlo mcts; multi_tree t; multi_agent m; //Declare instance of classes
-    gridworld *gp = &g; monte_carlo *mcp = &mcts; multi_tree *tp = &t; multi_agent *map = &m; //Pointers
-    
-    //Create Txt Files For Data Output
-    ofstream D_sysr, G_sysr, L_sysr, D_succ, G_succ, L_succ;
-    D_sysr.open("D_SysRewards.txt"); D_succ.open("D_Runs.txt");
-    G_sysr.open("G_SysRewards.txt"); G_succ.open("G_Runs.txt");
-    L_sysr.open("L_SysRewards.txt"); L_succ.open("L_Runs.txt");
-    
+    gridworld g;
+    monte_carlo mcts;
+    multi_tree t;
+    multi_agent m; //Declare instance of classes
+    gridworld *gp = &g;
+    monte_carlo *mcp = &mcts;
+    multi_tree *tp = &t;
+    multi_agent *map = &m; //Pointers
+
+    string scen = "empty-48-48";
+    int i = 1;
+
+    string a = "/home/carol/Desktop/Path Planning/mapf-scen-random/scen-random/" + scen + "-random-" + to_string(i) +
+               ".scen";
+    string b = "/home/carol/Desktop/Path Planning/mapf-map/" + scen + ".map";
+    const char *scen_file = a.c_str();
+    const char *map_file = b.c_str();
+
     //Testing Parameters
-    int stat_runs = 1; //Number of statistical runs : 30
-    int max_run = 10000;//Cuts off the simulation if the number of iterations exceed this amount : 10000
-    int agent_increment = 0; //Increases the number of agents in a simulation by this amount
-    int starting_agents = 2; //Initial number of agents being tested
-    int max_agents = 2; //Maximum number of agents to be tested
+    int stat_runs = 10; //Number of statistical runs : 30
+    int max_run = 15;//Cuts off the simulation if the number of iterations exceed this amount : 10000
+    int max_agents = 7; //Maximum number of agents to be tested
     g.x_dim = 8; //Maximum X Dimension
     g.y_dim = 8; //Maximum Y Dimension
+
+    ///UCB
     mcp->epsilon = 10; //UCB1 exploration constant (0 = greedy action selection)
+
+    ///Rollout
     mcp->rollout_steps = 15;//Number of rollout moves //15
     mcp->rollout_iterations = 3;
+    mcts.rollout_reward = 0.3; //Reward received during MCTS rollout for discovering a goal
+    mcts.rollout_c_goal = 5;
+
     gp->max_lev = g.x_dim + g.y_dim;
-    mcp->max_lev = g.x_dim + g.y_dim; //Cutoff point in tree where tree cannot expand any further
-    int success_count; //Counts the number of successful runs (all goals captured)
-    
+    mcp->max_lev = g.x_dim + g.y_dim; //Cutoff agent in tree where tree cannot expand any further
+
     //Rewards and Penalties
     g.goal_reward = 100; //Reward for reaching an unclaimed goal
-    mcts.rollout_reward = 0.5; //Reward received during MCTS rollout for discovering a goal
     g.step_penalty = -1; //Cost of each step taken by an agent in Gridworld
+    g.n_agents = max_agents;
+    g.at_goal.resize(max_agents);
 
     map->create_config_list(max_agents, g.x_dim, g.y_dim, stat_runs);
-    for(int c = 1; c < 2; c++){ //1 = local, 2 = global, 3 = difference
-        cout << "Credit Eval: " << c << endl;
-        g.credit_type = c;
-        for(g.n_agents = starting_agents; g.n_agents <= max_agents;){
-            for(int s = 0; s < stat_runs; s++){ //Run tests for specific number of stat runs
-                m.create_start_vecs(s, g.n_agents, max_agents);
-                g.initialize_parameters(map, mcp);
-                mcts.create_root_nodes(tp, map);
-                for(int its = 0; its < max_run; its++){
-                    for(int anum = 0; anum < g.n_agents; anum++){ //anum = agent number
-                        cout << " ============================= Agente "<< anum<<" ===========================" << endl;
-                        mcts.set_mc_parameters(tp, anum);
-                        mcts.mc_search(tp, map); //Runs MCTS for defined number of expansions
-                        mcts.n_num_vec.at(anum) = mcts.node_number; //Used to track what the current node number is in each tree
-                    }
-                    g.cred_evals(map, tp, mcp);
-
-                    //Check to see if agents have arrived at goals
-                    g.system_rollout(map, tp, mcp);
-                    g.reset_all_agents(map, tp);
+    int timestep = 1;
+    m.create_start_vecs(0, max_agents, max_agents);
+    g.initialize_parameters(map, mcp);
+    mcts.create_root_nodes(tp, map);
+    for (int anum = 0; anum < g.n_agents; anum++) {
+        cout  << "Agente: " << anum << " ---> ";
+        cout << m.agent_start_pos.at(anum).agent_x << "," << m.agent_start_pos.at(anum).agent_y << " -> "
+             << m.goal_start_pos.at(anum).agent_x << "," << m.goal_start_pos.at(anum).agent_y << endl;
+    }
+    while (timestep < 2) {
+        g.credit_type = 1;
+        for (int s = 0; s < stat_runs; s++) {
+            cout << " ============================= " << s << " ===========================" << endl;
+            for (int its = 0; its < max_run; its++) {
+                for (int anum = 0; anum < max_agents; anum++) { //anum = agent number
+                    if(g.at_goal[anum])continue;
+                    mcts.set_mc_parameters(tp, anum);
+                    mcts.mc_search(tp, map); //Runs MCTS for defined number of expansions
+                    mcts.n_num_vec.at(
+                            anum) = mcts.node_number; //Used to track what the current node number is in each tree
                 }
-                for(int anum = 0; anum < g.n_agents; anum++){
-                    cout<<endl<<"Agente: "<<anum<<" ---> ";
-                   cout<<m.agent_start_pos.at(anum).agent_x<<","<<m.agent_start_pos.at(anum).agent_y<<" -> "<<m.goal_start_pos.at(anum).goal_x<<","<<m.goal_start_pos.at(anum).goal_y<<endl;
-                    mcts.print_path(tp,anum);
-                }
-                mcts.check_goalAndColision(tp,0, map);
             }
+            // g.cred_evals(map, tp, mcp);
+            g.all_agents_move(tp, mcp);
+            //Check to see if agents have arrived at goals
+            // g.system_rollout(map, tp, mcp);
+            // g.agente_move(tp, mcp, 0);
+
+            // g.reset_all_agents(map, tp);
+            for (int anum = 0; anum < g.n_agents; anum++) {
+                int x = g.path_agents[anum][g.timestep].agent_x;
+                int y = g.path_agents[anum][g.timestep].agent_y;
+                if(m.goal_start_pos.at(anum).agent_x == x && m.goal_start_pos.at(anum).agent_y == y){
+                    cout  << "Agente: " << anum << " chegou no destino "<<endl;
+                    g.at_goal[anum] = true;
+                }
+
+               // mcts.print_path(tp, anum);
+            }
+            // mcts.check_goalAndColision(tp, 0, map);
         }
     }
 

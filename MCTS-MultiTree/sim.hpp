@@ -36,17 +36,26 @@ public:
     vector <int> end_lev;
     void reset_all_agents(multi_agent *map, multi_tree *tp);
     void calculate_local(multi_agent *map, monte_carlo *mcp, multi_tree *tp);
-    void calculate_global(multi_agent *map, monte_carlo *mcp, multi_tree *tp);
-    void calculate_difference(multi_agent *map, monte_carlo *mcp, multi_tree *tp);
     void clear_all_vectors(multi_agent *map, monte_carlo *mcp, multi_tree *tp); //Clear all vectors for next stat run
-    
+
+    void agente_move(multi_tree *tp, monte_carlo *mcp, int agent);
+    void all_agents_move(multi_tree *tp, monte_carlo *mcp);
+    bool checkCollision(int agent, int act);
+
+
+
     //Paramaters
     int credit_type; //Used to determine which type of credit eval to run
     int x_dim; //Max x-dimension of gridworld
     int y_dim; //max y-dimension of gridworld
     int n_agents; //Number of agents and goals
     int max_lev;
-    
+
+    int timestep=0;
+    std::vector<vector<point>> path_agents;
+    vector<bool> at_goal;
+
+
     bool all_goals_captured;
     bool goal_check;
     bool agents_at_goals;

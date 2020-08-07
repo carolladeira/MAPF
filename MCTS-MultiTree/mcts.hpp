@@ -1,11 +1,3 @@
-//
-//  mcts.hpp
-//  MAMCTS
-//
-//  Created by Nicholas Zerbel on 5/25/17.
-//  Copyright © 2017 Nicholas Zerbel. All rights reserved.
-//
-
 #ifndef mcts_hpp
 #define mcts_hpp
 
@@ -29,6 +21,7 @@ public:
 
     void print_path(multi_tree *tp,int a);
     void check_goalAndColision(multi_tree *tp,int a, multi_agent *map);
+    void update_tree(multi_tree *tp, int level, int n, int agent);
 
     //SELECTION
     void select(multi_tree *tp); //Choose an action
@@ -81,8 +74,10 @@ public:
     //Experimental Parameters
     int rollout_steps; //Number of rollout iterations
     int rollout_iterations; //Number of rollout iterations
-    double epsilon; //Exploration vs Exploitation parameter for UCB1
     double rollout_reward;
+    double rollout_c_goal;
+
+    double epsilon; //Exploration vs Exploitation parameter for UCB1
     double num;
     
     //Coordinates
@@ -94,7 +89,8 @@ public:
     int y_lim; //Maximum y dimension
 
 
-    std::vector<vector<agent>> list_agents;
+    std::vector<vector<point>> list_agents;
+
 };
 
 #endif /* mcts_hpp */

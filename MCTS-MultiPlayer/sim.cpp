@@ -16,6 +16,7 @@ void gridworld::agente_move(multi_tree *tp, monte_carlo *mcp) {
     tp->print_tree(0);
     cout << " ==========================================" << endl;
     cout << " ************** MC SEARCH ****************" << endl;
+    ///isso esta errado, arrumei no outro programa
     for (int lev = 1; lev < tp->ag_tree.at(a).tree_vec.size() - 1; lev++) {
         int act = mcp->select_move(tp, a, lev);
 

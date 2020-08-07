@@ -37,8 +37,8 @@ int main() {
     ///sempre numero mulyiplo fr 5
     int max_run = 25;//Cuts off the simulation if the number of iterations exceed this amount : 10000
     mcp->epsilon = 10; //UCB1 exploration constant (0 = greedy action selection)
-    mcp->rollout_steps = 1024;//Number of rollout moves //15
-    mcp->rollout_iterations = 50;
+    mcp->rollout_steps = 48;//Number of rollout moves //15
+    mcp->rollout_iterations = 5;
     mcts.rollout_reward = 0.0; //Reward received during MCTS rollout for discovering a goal
 
     ScenarioLoader *scenLoad;

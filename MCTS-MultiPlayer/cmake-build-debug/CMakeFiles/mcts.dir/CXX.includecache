@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/ScenarioLoader.h
+vector
+-
+cstring
+-
+string
+-
+
 /home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
 cstdlib
 -
@@ -18,10 +26,28 @@ assert.h
 fstream
 -
 
-/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.cpp
-mcts.hpp
-/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.hpp
-numeric
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/main.cpp
+fstream
+-
+assert.h
+-
+cstdlib
+-
+iostream
+-
+vector
+-
+cmath
+-
+sim.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/sim.hpp
+ScenarioLoader.h
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/ScenarioLoader.h
+agent.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
+tree.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.hpp
+time.h
 -
 
 /home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.hpp
@@ -41,6 +67,30 @@ tree.hpp
 /home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.hpp
 agent.hpp
 /home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
+
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/sim.hpp
+cstdlib
+-
+iostream
+-
+vector
+-
+assert.h
+-
+algorithm
+-
+time.h
+-
+fstream
+-
+mcts.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/mcts.hpp
+ScenarioLoader.h
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/ScenarioLoader.h
+agent.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/agent.hpp
+tree.hpp
+/home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.hpp
 
 /home/carol/Desktop/Path Planning/MCTS-MultiPlayer/tree.hpp
 cstdlib
