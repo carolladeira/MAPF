@@ -78,17 +78,20 @@ void ScenarioLoader::MapLoader(const char *fname) {
     FILE *f;
     f = fopen(fname, "r");
     if (!f) {
-        std::cout << "Point file not found." << std::endl;
+        std::cout << "Mapa file not found." << std::endl;
         system("PAUSE");
         return;
     }
     fscanf(f, "type octile\nheight %d\nwidth %d\nmap\n", &height, &width);
+    height = height+2;
+    width=width+2;
     map.resize(height * width);
     mapInfo.resize(height * width);
+    mapa.resize(height, std::vector<bool>(width));
 
-    for (int y = 0; y < height; y++) {
+    for (int x = 1; x < height -1; x++) {
 
-        for (int x = 0; x < width; x++) {
+        for (int y = 1; y < width-1; y++) {
 
             char what;
             fscanf(f, "%c", &what);
@@ -97,6 +100,7 @@ void ScenarioLoader::MapLoader(const char *fname) {
 
                 case '@': //out of bounds
                     map[y*width+x] = 1;
+                    mapa[x][y]= false;
                 case 'O': //out of bounds
                     map[y*width+x] = 1;
                     break;
@@ -111,15 +115,46 @@ void ScenarioLoader::MapLoader(const char *fname) {
                     break;
                 default: //passable terrain (.,G)
                     map[y*width+x] = 0;
+                    mapa[x][y]= true;
                     break;
             }
-            mapInfo[y*width+x].x = x;
-            mapInfo[y*width+x].y = y;
-            mapInfo[y*width+x].loc = y*width+x;
-
-
         }
         fscanf(f, "\n");
     }
+//    for (int y = 0; y < height; y++) {
+//
+//        for (int x = 0; x < width; x++) {
+//
+//            char what;
+//            fscanf(f, "%c", &what);
+//            switch (toupper(what))
+//            {
+//
+//                case '@': //out of bounds
+//                    map[y*width+x] = 1;
+//                case 'O': //out of bounds
+//                    map[y*width+x] = 1;
+//                    break;
+//                case 'S': //swamp (passable from regular terrain)
+//                    map[y*width+x] = 0;
+//                    break;
+//                case 'W': //water (traversable, but not passable from terrain)
+//                    map[y*width+x] = 2;
+//                    break;
+//                case 'T': //trees (unpassable)
+//                    map[y*width+x] = 4;
+//                    break;
+//                default: //passable terrain (.,G)
+//                    map[y*width+x] = 0;
+//                    break;
+//            }
+//            mapInfo[y*width+x].x = x;
+//            mapInfo[y*width+x].y = y;
+//            mapInfo[y*width+x].loc = y*width+x;
+//
+//
+//        }
+//        fscanf(f, "\n");
+//    }
     fclose(f);
 }

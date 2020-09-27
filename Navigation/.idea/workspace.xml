@@ -11,51 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9f0c39e-7f45-4e1f-bede-803bdd4b7bc2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ICBS/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/ICBSSearch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/ICBSSearch.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/Simulation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/Simulation.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/Simulation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/SingleAgentICBS.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/SingleAgentICBS.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/ICBS.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/ICBS.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/ICBS.dir/ICBSSearch.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/ICBS.dir/ICBSSearch.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/ICBS.dir/Simulation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/ICBS.dir/Simulation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/ICBS.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/cmake-build-debug/ICBS" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/cmake-build-debug/ICBS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ICBS/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ICBS/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/agent.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/agent.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/agent.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/mcts.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/mcts.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/sim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/sim.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/tree.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/mcts.dir/tree.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/MCTS-MultiPlayer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/MCTS-MultiPlayer.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/mcts" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/cmake-build-debug/mcts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/mcts.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/mcts.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/mcts.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/mcts.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/sim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/sim.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/sim.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/sim.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/tree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCTS-MultiPlayer/tree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MCTS-MultiPlayer/tree.hpp" afterDir="false" />
-    </list>
+    <list default="true" id="f9f0c39e-7f45-4e1f-bede-803bdd4b7bc2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +149,39 @@
       <workItem from="1553005528237" duration="47000" />
       <workItem from="1588605598087" duration="7716000" />
       <workItem from="1589498615272" duration="5232000" />
+      <workItem from="1594395585203" duration="266000" />
+      <workItem from="1594404814905" duration="3644000" />
+      <workItem from="1594417111207" duration="6750000" />
+      <workItem from="1594673729953" duration="956000" />
+      <workItem from="1594743511817" duration="700000" />
+      <workItem from="1594914283214" duration="4304000" />
+      <workItem from="1596213236587" duration="796000" />
+      <workItem from="1596293265037" duration="3260000" />
+      <workItem from="1596477050589" duration="6175000" />
+      <workItem from="1596561880657" duration="1121000" />
+      <workItem from="1596719626757" duration="1639000" />
+      <workItem from="1596811352984" duration="1792000" />
+      <workItem from="1596841721717" duration="815000" />
+      <workItem from="1596893747778" duration="4840000" />
+      <workItem from="1597066431063" duration="1458000" />
+      <workItem from="1597166022328" duration="2027000" />
+      <workItem from="1597253726876" duration="513000" />
+      <workItem from="1597256907216" duration="559000" />
+      <workItem from="1597329668067" duration="2324000" />
+      <workItem from="1597337048083" duration="560000" />
+      <workItem from="1597583753416" duration="540000" />
+      <workItem from="1597673671828" duration="1189000" />
+      <workItem from="1597947400963" duration="1635000" />
+      <workItem from="1597960048674" duration="71000" />
+      <workItem from="1598012854466" duration="1213000" />
+      <workItem from="1598100801960" duration="614000" />
+      <workItem from="1598301298174" duration="713000" />
+      <workItem from="1598363998284" duration="561000" />
+      <workItem from="1598449611349" duration="1362000" />
+      <workItem from="1598987298033" duration="669000" />
+      <workItem from="1599047928448" duration="1810000" />
+      <workItem from="1600629791186" duration="593000" />
+      <workItem from="1600691138731" duration="539000" />
     </task>
     <task id="LOCAL-00001" summary="Gerando lista de adjacentes correta">
       <created>1542985941656</created>
@@ -215,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543288403378</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DStar Lite implementado - sem evitar obstaculos">
+      <created>1596812633392</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596812633392</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -250,27 +246,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="DStar Lite implementado - sem evitar obstaculos" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Scene.cpp</url>
-          <line>25</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="dstar-&gt;closed" />
-        <watch expression="i" />
-        <watch expression="dstar-&gt;closed[i].id" />
-        <watch expression="dstar-&gt;closed" />
-        <watch expression="open" />
-        <watch expression="u" />
-        <watch expression="this-&gt;open.begin()" />
-        <watch expression="this-&gt;open" />
-        <watch expression="this-&gt;open.begin()" />
-        <watch expression="u.key.first " />
+        <watch expression="agentes" />
       </configuration>
     </watches-manager>
   </component>

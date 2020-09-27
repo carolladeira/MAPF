@@ -17,7 +17,7 @@ public:
 
     void drawScene(Nav *navMesh, Agente agente, int nWall, ScenarioLoader scen);
     void drawObstacles(ScenarioLoader scen);
-    void drawAgent(Nav *navMesh);
+    void drawAgent(std::vector<Agente> agentes, int cont);
     void drawMeshes(Nav *navMesh, int nWall);
     void drawGraph(ScenarioLoader scen);
   //  void drawPath(DStar *dStar);

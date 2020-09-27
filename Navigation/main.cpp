@@ -10,7 +10,6 @@
 #include <list>
 
 
-
 #define num_paredes 20
 
 
@@ -21,24 +20,30 @@ ScenarioLoader *scenLoad;
 Scene *scene;
 Agente agente;
 Nav *navMesh;
-int contador =0;
+std::vector<Agente>agentes;
+int contador = 0;
 int height;
 int width;
 Point m;
+Point ma;
 
 void reshape(int, int);
+
 void display(void);
-void idle ();
+
+void idle();
+
 void init();
+
 void mouse(int button, int state, int x, int y);
 
 
-int main(int argc, char** argv) {
-   // std:: cout << "   "<<__cplusplus ;
-   // start = clock();
+int main(int argc, char **argv) {
+    // std:: cout << "   "<<__cplusplus ;
+    // start = clock();
 
     //srand (time(NULL));
-    srand (42);
+    srand(42);
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(900, 700);
@@ -49,11 +54,10 @@ int main(int argc, char** argv) {
     glutDisplayFunc(display); //quando um pixel na janela precisa ser atualizado
     glutIdleFunc(idle); //funcao de callback chamada quando nada esta acontecendo
     glutReshapeFunc(reshape); //chamado quando a janela 'e redimensionada
-  //  glutMotionFunc(mouseMotionFunc);
+    //  glutMotionFunc(mouseMotionFunc);
     glutMouseFunc(mouse);
 
     init();
-
 
 
     glutMainLoop();
@@ -62,61 +66,66 @@ int main(int argc, char** argv) {
 }
 
 void reshape(int w, int h) {
-    glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+    glViewport(0, 0, (GLsizei) w, (GLsizei) h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
 
-    glOrtho(0.0f, (float)w, (float)h, 0.0f, -1.0f, 1.0f);
+    glOrtho(0.0f, (float) w, (float) h, 0.0f, -1.0f, 1.0f);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
 
-void display (void)
-{
+void display(void) {
 
-    glClear (GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(-2, height+2, -2, width+2, -1.0, 1.0);
+    glOrtho(-2, height + 2, -2, width + 2, -1.0, 1.0);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     scene->drawScene(navMesh, agente, num_paredes, *scenLoad);
-    scene->drawAgent(navMesh);
+    scene->drawAgent(agentes, contador);
     scene->drawObstacles(*scenLoad);
     scene->drawPathAtual(agente);
 
 
-    glFlush ();
+    glFlush();
 }
 
 
-void idle()
-{
+void idle() {
     //for( int i=0;  navMesh->agentes[0].path.size(); i++){
-        usleep(200000);
-    std::cout<<contador<<std::endl;
+    usleep(1000000);
+    std::cout << contador << std::endl;
     contador++;
-         m = navMesh->agentes[0].path[contador];
-        agente.atual.x = m.x;
-        agente.atual.y = m.y;
-        glutPostRedisplay();
+    for(int i =0; i < agentes.size(); i ++){
+        agentes[i].atual.x = agentes[i].path[contador].x;
+        agentes[i].atual.y = agentes[i].path[contador].y;
+
+    }
+    m = navMesh->agentes[2].path[contador];
+    agente.atual.x = m.x;
+    agente.atual.y = m.y;
+    ma = navMesh->agentes[2].path_goal[contador];
+    agente.goal.x = ma.x;
+    agente.goal.y = ma.y;
+    glutPostRedisplay();
 
 
 
-        //scene->drawPathAtual(navMesh->agentes[0].path[i]);
-   // }
+    //scene->drawPathAtual(navMesh->agentes[0].path[i]);
+    // }
 
 
 }
 
-void init()
-{
+void init() {
     glClearColor(1.0, 1.0, 1.0, 0.0);
-    const char *scen_file = "/home/carol/Desktop/Path Planning/scenarios/City/Berlin_1_256.map-scen-random/scen-random/Berlin_1_256-random-1.scen";
-    const char *map_file = "/home/carol/Desktop/Path Planning/maps/City/Berlin_1_256.map";
-    string cam = "/home/carol/Desktop/test.txt";
+    const char *scen_file = "/home/carol/Desktop/Path Planning/mapf-scen-random/scen-random/Berlin_1_256.scen";
+    const char *map_file = "/home/carol/Desktop/Path Planning/mapf-map/mapf-kiva-10.map";
+    string cam = "/home/carol/Desktop/MAPD-MC/Resultados/10-10-MONTE_CARLO.path";
 
 
     scenLoad = new ScenarioLoader(scen_file);
@@ -130,13 +139,15 @@ void init()
     navMesh = new Nav(*scenLoad);
     navMesh->read_file(cam, width);
     agente = navMesh->agentes[0];
+    agentes = navMesh->agentes;
 }
 
 
 void clickCell(int x, int y) {
 }
+
 void mouse(int button, int state, int x, int y) {
-    if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
         clickCell(x, y);
     }
 }

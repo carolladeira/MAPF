@@ -30,16 +30,6 @@ cstring
 string
 -
 
-/home/carol/Desktop/Path Planning/Navigation/Scene.cpp
-GL/glut.h
--
-iostream
--
-Scene.h
-/home/carol/Desktop/Path Planning/Navigation/Scene.h
-fstream
--
-
 /home/carol/Desktop/Path Planning/Navigation/Scene.h
 Nav.h
 /home/carol/Desktop/Path Planning/Navigation/Nav.h

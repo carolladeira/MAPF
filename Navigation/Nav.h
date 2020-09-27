@@ -29,6 +29,7 @@ public:
     Point goal;
     Point atual;
     std::vector<Point>path;
+    std::vector<Point>path_goal;
     Agente();
 };
 

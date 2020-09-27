@@ -54,6 +54,7 @@ public:
     int height;
     int width;
     std::vector<int> map;
+    std::vector<std::vector<bool>> mapa;
     std::vector<Loc> mapInfo;
 
 
